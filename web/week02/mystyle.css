@@ -1,0 +1,42 @@
+body {
+  margin: 0 auto;
+  padding: 5px;
+}
+#div1 {
+ height: 100px;
+ width: 100%;
+ background-color: #c1e5f0; 
+}
+#div1 p {
+  font-size: 30px;
+  margin: 0 auto;
+}
+#div2 {
+ height: 100px;
+ width: 100%;
+ background-color: #85aebb;
+}
+#div2 p {
+  font-size: 45px;
+  margin: 0 auto;
+}
+#div3 {
+ height: 100px;
+ width: 100%;
+ background-color: #325864; 
+ margin-bottom: 15px;
+}
+#div3 p {
+  font-size: 60px;
+  margin: 0 auto;
+}
+#div1:hover, #div2:hover, #div3:hover {
+  font-weight: bold;
+}
+form {
+  margin-top: 15px;
+}
+#fadeToggle {
+	margin-top: 15px;
+}
+

@@ -3,7 +3,7 @@
 ?>
 <ul class="navbar">
   <li><a href="#home">Home</a></li>
-  <li><a href="#assignments">All Assignments</a></li>
+  <li><a href="assignments.php">All Assignments</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Team Activities</a>
     <div class="dropdown-content">

@@ -25,7 +25,7 @@
     <a href="javascript:void(0)" class="dropbtn">Prove</a>
     <div class="dropdown-content">
       <a href="#">Week01</a>
-      <a href="Prove02.php">Week02</a>
+      <a href="prove02.php">Week02</a>
       <a href="#">Week03</a>
       <a href="#">Week04</a>
       <a href="#">Week05</a>

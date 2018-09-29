@@ -44,10 +44,10 @@
   <h1>CS 313: Assignments</h1>
   <dl>
   <dt>Week01</dt>
-  <dd>- <a href="../../hello.html">Prove01</dd>
+  <dd>- <a href="../../hello.html">Prove01</a></dd>
   <dt>Week02</dt>
-  <dd>- <a href="../ta.html">Teach02</dd>
-  <dd>- <a href="prove02.php">Prove02</dd>
+  <dd>- <a href="../ta.html">Teach02</a></dd>
+  <dd>- <a href="prove02.php">Prove02</a></dd>
   <dt>Week03</dt>
   <dd>- Coming Soon</dd>
 </dl>

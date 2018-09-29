@@ -2,7 +2,7 @@
   include('includes/header.php');
 ?>
 <ul class="navbar">
-  <li><a href="#home">Home</a></li>
+  <li><a href="prove02.php">Home</a></li>
   <li><a href="assignments.php">All Assignments</a></li>
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Team Activities</a>
@@ -44,10 +44,10 @@
   <h1>CS 313: Assignments</h1>
   <dl>
   <dt>Week01</dt>
-  <dd>- Prove01</dd>
+  <dd>- <a href="../../hello.html">Prove01</dd>
   <dt>Week02</dt>
-  <dd>- Teach02</dd>
-  <dd>- Prove02</dd>
+  <dd>- <a href="../ta.html">Teach02</dd>
+  <dd>- <a href="prove02.php">Prove02</dd>
   <dt>Week03</dt>
   <dd>- Coming Soon</dd>
 </dl>

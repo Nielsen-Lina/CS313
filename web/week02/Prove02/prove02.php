@@ -8,7 +8,7 @@
     <a href="javascript:void(0)" class="dropbtn">Team Activities</a>
     <div class="dropdown-content">
       <a href="#">Week01</a>
-      <a href="#">Week02</a>
+      <a href="../ta.html">Week02</a>
       <a href="#">Week03</a>
     </div>
   </li>

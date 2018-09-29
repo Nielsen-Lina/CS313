@@ -1,5 +1,5 @@
 <div class="footer">
-  <p>Footer</p>
+  <p>&copy; Lina Nielsen <?php echo date("m/d/Y h:ia"); ?></p>
 </div>
 </body>
 </html>

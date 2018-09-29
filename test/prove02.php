@@ -1,5 +1,5 @@
 <?php 
-  include('includes/header.html');
+  include('includes/header.php');
 ?>
 <ul class="navbar">
   <li><a href="#home">Home</a></li>
@@ -45,5 +45,5 @@
   </article>
 </main>
 <?php 
-  include('includes/footer.html');
+  include('includes/footer.php');
 ?>

@@ -46,6 +46,7 @@ $_SESSION["checkoutProducts"];
 		       <?php
 		       echo "<h2>Order Cancelation</h2>";
 		       echo "<p>Your order has been canceled.</p>";
+		       unset($_SESSION["checkoutProducts"]);
 		       ?>		    		
 		    <?php endif; ?>
             

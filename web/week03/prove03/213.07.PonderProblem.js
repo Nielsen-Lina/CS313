@@ -84,3 +84,4 @@ function focusOnForm() {
     document.form.first.focus();
     update('tableItems', 'tableTotalPrice');
 }
+

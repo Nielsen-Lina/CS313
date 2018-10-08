@@ -129,7 +129,7 @@ a:link, a:visited {
     position: absolute;
     display: none;
 }
-/
+
 .container input:checked ~ .checkmark:after {
     display: block;
 }

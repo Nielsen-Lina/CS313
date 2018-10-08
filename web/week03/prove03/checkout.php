@@ -1,16 +1,7 @@
 <?php
 session_start();
 
-$checkedProducts = !empty($_POST['updateProducts']) ? $_POST['updateProducts'] : [];
-$finalProducts = [];
-foreach ($checkedProducts as $product) {
-	$finalProducts[] = $product;
-}
-if (empty($finalProducts)) {
-    $finalProducts[] = "empty";
-}
-
-$_SESSION["checkoutProducts"] = $finalProducts;
+$_SESSION["checkoutProducts"];
 ?>
 
 <!DOCTYPE html>
@@ -85,7 +76,7 @@ $_SESSION["checkoutProducts"] = $finalProducts;
 
 	        	<input class="submit" name="confirm" type="submit" value="Confirm">
     			<input class="submit" name="cancel" type="submit" value="Cancel">
-    			<button class="submit"><a href="./cart.php">Go Back</a></button>
+    			<input class="submit" type="submit" formaction="./update.php" value="Go Back">
 	        </form>        
         </div>
 

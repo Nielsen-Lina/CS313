@@ -32,7 +32,7 @@ img {
     width: 70px;
 }
 
-input, select {
+input, select, button {
     width: 100%;
     padding: 10px 18px;
     margin: 8px 0;
@@ -40,6 +40,10 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+button a:link {
+    text-align: center;
 }
 
 #personal_info, #cart {
@@ -122,7 +126,7 @@ th {
     content: '$';
 }
 */
-.reset, .submit {
+.reset, .submit, .button {
     display: block;
     right: 20px;
     border: 0;

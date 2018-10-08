@@ -6,9 +6,6 @@ $finalProducts = [];
 foreach ($checkedProducts as $product) {
 	$finalProducts[] = $product;
 }
-if (empty($finalProducts)) {
-    $finalProducts[] = "empty";
-}
 
 $_SESSION["checkoutProducts"] = $finalProducts;
 ?>
@@ -20,15 +17,14 @@ $_SESSION["checkoutProducts"] = $finalProducts;
    	include ('includes/title.php');
    	?>
     <body>
-        <div id="cart">
-            <h2>Your Shopping Cart Review:</h2>
-            <p>Select the items you would like to keep in your cart.<br><b>Unselected</b> items will be deleted.</p>
-            <p>Click Checkout to refresh the shopping cart and to continue.</p>
+        <div id="cart">            
             <form method="post" action="checkout.php">
-	            <?php if ($finalProducts[0] == "empty") : ?>
+	            <?php if (empty($finalProducts)) : ?>
 	            	<label class="container"> No items have been selected. Go back and select your items. </label>
-		            <button  class="submit"><a href="./index.php">Go Back</a></button>
+		            <input class="submit" type="submit" formaction="./index.php" value="Go Back">
 		        <?php else: ?> 
+		        	<h2>Your Shopping Cart Review:</h2>
+		            <p>Select the items you would like to DELETE from your cart.</p>
 		            <?php foreach ($finalProducts as $value) : ?>	            	
 		            	<?php if ($value == "kong") : ?>
 		            		<label class="container"><img src="kong.png" alt="Kong Dog Toy"> <?= $value; ?>            
@@ -42,7 +38,7 @@ $_SESSION["checkoutProducts"] = $finalProducts;
 					        </label>
 		            	<?php elseif ($value == "dentastix") : ?>
 		            		<label class="container"><img src="dentastix.jpg" alt="Pedigree Dentastix"> <?= $value; ?>            
-					         	<input type="checkbox" name="updateProducts[]" value="dentasix">            
+					         	<input type="checkbox" name="updateProducts[]" value="dentastix">            
 					            <span class="checkmark"></span>
 					        </label>
 		            	<?php elseif ($value == "groom") : ?>
@@ -52,8 +48,9 @@ $_SESSION["checkoutProducts"] = $finalProducts;
 					        </label>
 		            	<?php endif; ?>
 		            <?php endforeach; ?>  
+		        <input class="submit" type="submit" formaction="update.php" value="Update">
 		        <input class="submit" type="submit" value="Checkout"> 
-		        <button class="submit"><a href="./index.php">Go Back</a></button>	
+		        <input class="submit" type="submit" formaction="./index.php" value="Go Back">	
 	         <?php endif; ?>
 		        
 	        </form>        

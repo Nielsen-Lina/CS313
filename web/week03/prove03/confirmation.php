@@ -20,6 +20,7 @@ $_SESSION["checkoutProducts"];
    	?>
     <body>
         <div id="cart">
+        	<form method="post" action="./index.php">
         	<?php
 		       if (isset($_POST["confirm"])) : ?> 
 		       <?php 
@@ -48,7 +49,7 @@ $_SESSION["checkoutProducts"];
 		       ?>		    		
 		    <?php endif; ?>
             
-	        <button class="submit"><a href="./index.php">Shop Again</a></button>      
+	        <input class="submit" type="submit" value="Shop Again">      
         </div>
 
         <?php

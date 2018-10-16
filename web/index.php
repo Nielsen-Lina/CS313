@@ -69,7 +69,7 @@ if($rows == $stmt->fetchAll(PDO::FETCH_ASSOC)){
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
 {
-  echo "<b>" . $row['book'] . "</b>";
+  echo "<b>" . $row['book'] . " </b>";
   echo "<b>" . $row['chapter'] . ":</b>";
   echo "<b>" . $row['verse'] . "</b> - ";
   echo $row['content'];

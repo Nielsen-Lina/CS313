@@ -44,7 +44,7 @@ $statement = $db->query('SELECT username, password FROM note_user');
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 print_r($results);
 
- if($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
+ if($results = $statement->fetchAll(PDO::FETCH_ASSOC)){
         echo "Found";
         print_r($results);
  }else{

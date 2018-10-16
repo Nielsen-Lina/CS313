@@ -51,9 +51,9 @@ print_r($results);
         echo "Not found";
  }
 
-$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
-$stmt->bindValue(':id', $id, PDO::PARAM_INT);
-$stmt->bindValue(':name', $name, PDO::PARAM_STR);
+$stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
+$stmt->bindValue(':id', 1, PDO::PARAM_INT);
+$stmt->bindValue(':name', 'john', PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
@@ -65,8 +65,8 @@ if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
         echo "Not found";
  }
 
-$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
-$stmt->execute(array(':name' => $name, ':id' => $id));
+$stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
+$stmt->execute(array(':name' => 'jane', ':id' => 2));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 

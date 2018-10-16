@@ -42,7 +42,7 @@ $statement = $db->prepare('SELECT username, password FROM note_user');
 $statement->execute();
 $results = $statement->fetchAll();
 
- if($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
+ if($result = $statement->fetchAll()){
         echo "Found";
         print_r($result);
  }else{

@@ -56,4 +56,8 @@ $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+$stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
+$stmt->execute(array(':name' => $name, ':id' => $id));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>

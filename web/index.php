@@ -66,4 +66,11 @@ if($rows == $stmt->fetchAll(PDO::FETCH_ASSOC)){
         echo "Not found <br>";
  }
 */
+
+foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
+{
+  echo "<b>$row['book'] $row['chapter']:$row['verse']</b> - " . $row['content'];
+  echo '<br/>';
+}
+
 ?>

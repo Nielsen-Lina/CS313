@@ -44,11 +44,11 @@ $statement = $db->query('SELECT username, password FROM note_user');
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 print_r($results);
 
- if($results = $statement->fetchAll(PDO::FETCH_ASSOC)){
-        echo "Found";
+ if($results == $statement->fetchAll(PDO::FETCH_ASSOC)){
+        echo "Found <br>";
         print_r($results);
  }else{
-        echo "Not found";
+        echo "Not found <br>";
  }
 
 $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
@@ -58,11 +58,11 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 
-if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
-        echo "Found";
+if($rows == $stmt->fetchAll(PDO::FETCH_ASSOC)){
+        echo "Found <br>";
         print_r($rows);
  }else{
-        echo "Not found";
+        echo "Not found <br>";
  }
 
 $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
@@ -70,11 +70,11 @@ $stmt->execute(array(':username' => 'jane', ':id' => 2));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 
-if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
-        echo "Found";
+if($rows == $stmt->fetchAll(PDO::FETCH_ASSOC)){
+        echo "Found <br>";
         print_r($rows);
  }else{
-        echo "Not found";
+        echo "Not found <br>";
  }
 
 ?>

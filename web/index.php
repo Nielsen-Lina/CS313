@@ -37,7 +37,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
 }
 */
+// didn't produce any output
 $statement = $db->query('SELECT username, password FROM note_user');
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+echo $results;
 
 ?>

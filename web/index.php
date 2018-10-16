@@ -53,7 +53,7 @@ print_r($results);
 
 $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
 $stmt->bindValue(':id', 1, PDO::PARAM_INT);
-$stmt->bindValue(':name', 'john', PDO::PARAM_STR);
+$stmt->bindValue(':username', 'john', PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
@@ -66,7 +66,7 @@ if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
  }
 
 $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
-$stmt->execute(array(':name' => 'jane', ':id' => 2));
+$stmt->execute(array(':username' => 'jane', ':id' => 2));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 

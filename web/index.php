@@ -42,6 +42,7 @@ $statement = $db->query('SELECT username, password FROM note_user');
 //$statement = $db->prepare('SELECT username, password FROM note_user');
 //$statement->execute();
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+print_r($results);
 
  if($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
         echo "Found";
@@ -55,9 +56,11 @@ $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($rows);
 
 $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
 $stmt->execute(array(':name' => $name, ':id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($rows);
 
 ?>

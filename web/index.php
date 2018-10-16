@@ -46,8 +46,8 @@ print_r($results);
 echo "<br>";
 
 $stmt = $db->prepare('SELECT * FROM note_user WHERE id=:id AND username=:username');
-$stmt->bindValue(':id', 1, PDO::PARAM_INT);
-$stmt->bindValue(':username', 'john', PDO::PARAM_STR);
+$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+$stmt->bindValue(':username', $username PDO::PARAM_STR);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);

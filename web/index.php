@@ -40,7 +40,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 // didn't produce any output
 $statement = $db->prepare('SELECT username, password FROM note_user');
 $statement->execute();
-$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+$results = $statement->fetchAll();
 
  if($result = $statement->fetchAll(PDO::FETCH_ASSOC)){
         echo "Found";

@@ -71,8 +71,8 @@ foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $
 {
   echo "<b>" . $row['book'] . " </b>";
   echo "<b>" . $row['chapter'] . ":</b>";
-  echo "<b>" . $row['verse'] . "</b> - ";
-  echo $row['content'];
+  echo "<b>" . $row['verse'] . "</b> - <q>";
+  echo $row['content'] . "</q>";
   echo '<br/>';
 }
 

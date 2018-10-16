@@ -58,9 +58,23 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 
+if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
+        echo "Found";
+        print_r($rows);
+ }else{
+        echo "Not found";
+ }
+
 $stmt = $db->prepare('SELECT * FROM table WHERE id=:id AND name=:name');
 $stmt->execute(array(':name' => $name, ':id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
+
+if($rows = $stmt->fetchAll(PDO::FETCH_ASSOC)){
+        echo "Found";
+        print_r($rows);
+ }else{
+        echo "Not found";
+ }
 
 ?>

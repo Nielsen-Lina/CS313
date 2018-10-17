@@ -22,6 +22,7 @@ catch (PDOException $ex)
   die();
 } 
 
+echo "<h1>Scripture Resources</h1>";
 foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
 {
   echo "<b>" . $row['book'] . " </b>";
@@ -33,10 +34,11 @@ foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $
 
 $book = htmlspecialchars($_GET['book']);
 
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:book');
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE tolower(book)=tolower(:book)');
 $stmt->execute(array(':book' => $book));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+echo "<h2>Search Results</h2>";
 foreach ($rows as $row) {
   echo "<b>" . $row['book'] . " </b>";
   echo "<b>" . $row['chapter'] . ":</b>";

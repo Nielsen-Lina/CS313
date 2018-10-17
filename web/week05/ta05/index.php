@@ -34,7 +34,7 @@ foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $
 
 $book = htmlspecialchars($_GET['book']);
 
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE tolower(book)=tolower(:book)');
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE lower(book)=lower(:book)');
 $stmt->execute(array(':book' => $book));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

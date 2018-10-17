@@ -32,12 +32,15 @@ catch (PDOException $ex)
 
 $id = htmlspecialchars($_GET['id']);
 
-$stmt = $db->prepare('SELECT content FROM Scriptures WHERE id=:id');
+$stmt = $db->prepare('SELECT book, chapter, verse, content FROM Scriptures WHERE id=:id');
 $stmt->execute(array(':id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<h2>Search Results</h2>";
 foreach ($rows as $row) {
+  echo "<b>" . $row['book'] . " </b>";
+  echo "<b>" . $row['chapter'] . ":</b>";
+  echo "<b>" . $row['verse'] . "</b>";
   echo $row['content'];
   echo '<br/>';
 }

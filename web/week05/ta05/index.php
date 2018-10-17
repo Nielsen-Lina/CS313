@@ -23,27 +23,26 @@ catch (PDOException $ex)
 } 
 
 echo "<h1>Scripture Resources</h1>";
-foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
+foreach ($db->query('SELECT id, book, chapter, verse FROM Scriptures') as $row)
 {
   echo "<b>" . $row['book'] . " </b>";
   echo "<b>" . $row['chapter'] . ":</b>";
-  echo "<b>" . $row['verse'] . "</b> - <q>";
-  echo $row['content'] . "</q>";
+  echo "<b>" . $row['verse'] . "</b>";
   echo '<br/>';
 }
 
 $book = htmlspecialchars($_GET['book']);
 
-$stmt = $db->prepare('SELECT * FROM Scriptures WHERE lower(book)=lower(:book)');
+$stmt = $db->prepare('SELECT id, book, chapter, verse FROM Scriptures WHERE lower(book)=lower(:book)');
 $stmt->execute(array(':book' => $book));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<h2>Search Results</h2>";
 foreach ($rows as $row) {
+  echo "<a href='details.php?id=" . $row['id'] . "'>View Details</a>";
   echo "<b>" . $row['book'] . " </b>";
   echo "<b>" . $row['chapter'] . ":</b>";
-  echo "<b>" . $row['verse'] . "</b> - <q>";
-  echo $row['content'] . "</q>";
+  echo "<b>" . $row['verse'] . "</b>";
   echo '<br/>';
 }
 

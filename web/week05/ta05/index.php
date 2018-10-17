@@ -31,4 +31,23 @@ foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $
   echo '<br/>';
 }
 
+$book = htmlspecialchars($_GET['book']);
+
+$stmt = $db->prepare('SELECT * FROM Scriptures WHERE book=:book');
+$stmt->execute(array(':book' => $book));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($rows as $row) {
+  echo "<b>" . $row['book'] . " </b>";
+  echo "<b>" . $row['chapter'] . ":</b>";
+  echo "<b>" . $row['verse'] . "</b> - <q>";
+  echo $row['content'] . "</q>";
+  echo '<br/>';
+}
+
 ?>
+
+<form method="GET" action="index.php">
+	<input type="text" name="book"><br>
+	<input type="submit" value="Search">
+</form>

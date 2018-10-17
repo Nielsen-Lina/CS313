@@ -14,6 +14,12 @@
   <dd>- <a href="../../week03/teach03/index.php">Teach03</a></dd>
   <dd>- <a href="../../week03/prove03/index.php">Prove03</a></dd>
   <dt>Week04</dt>
+  <dd>- <a href="https://github.com/Nielsen-Lina/CS313-PHP/blob/master/web/week04/ta04/team_week4.sql">Teach04</a></dd>
+  <dd>- <a href="https://github.com/Nielsen-Lina/CS313-PHP/blob/master/db/myDb.sql">Prove04</a></dd>
+  <dt>Week05</dt>
+  <dd>- <a href="../../week05/ta05/index.php">Teach05</a></dd>
+  <dd>- <a href="#">Prove05</a></dd>
+  <dt>Week06</dt>
   <dd>- Coming Soon</dd>
 </dl>
 </main>

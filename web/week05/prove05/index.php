@@ -57,7 +57,7 @@ $stmt->execute();
 $id = $stmt->fetch(PDO::FETCH_ASSOC);
 //print_r($id['category_id']);
 
-$sql_2 = 'SELECT company_name FROM detail WHERE category_id=:category_id';
+$sql_2 = 'SELECT category_id, company_name FROM detail WHERE category_id=:category_id';
 
 $stmt = $db->prepare($sql_2);
 $stmt->bindParam(':category_id', $id);

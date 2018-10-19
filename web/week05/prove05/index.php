@@ -77,21 +77,21 @@ echo "</ul>";
 <h2>Additions to the Expense Management System</h2>
 <h3>Add a new budget category with its accompanied amount:</h3>
 <form method="POST" action="index.php">
-  <input type="text" name="category_name">
-  <input type="text" name="amount">
+  <input type="text" name="category_name" placeholder="category_name">
+  <input type="text" name="amount" placeholder="amount">
   <input type="submit" value="Add">
 </form>
 <h3>Add a new budget company name with its accompanied budget category:</h3>
 <form method="POST" action="index.php">
-  <input type="text" name="company_name">
-  <input type="text" name="category_name">
+  <input type="text" name="company_name" placeholder="company_name">
+  <input type="text" name="category_name" placeholder="category_name">
   <input type="submit" value="Add">
 </form>
 <h3>Add a new expense with its accompanied company name, amount and date of purchase:</h3>
 <form method="POST" action="index.php">
-  <input type="text" name="company_name">
-  <input type="text" name="transaction_amount">
-  <input type="text" name="purchase_date">
+  <input type="text" name="company_name" placeholder="company_name">
+  <input type="text" name="transaction_amount" placeholder="transaction_amount">
+  <input type="text" name="purchase_date" placeholder="purchase_date">
   <input type="submit" value="Add">
 </form>
 

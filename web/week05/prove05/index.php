@@ -65,7 +65,7 @@ $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($names as $name)
 {
-  echo $row['company_name'] . "<br/>";
+  echo $name['company_name'] . "<br/>";
 }
 
 ?>

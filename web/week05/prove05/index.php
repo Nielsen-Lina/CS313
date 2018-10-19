@@ -54,6 +54,6 @@ $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->execute();
 //$stmt->execute(array(':book' => $book));
 $rows = $stmt->fetch(PDO::FETCH_ASSOC);
-print_r($rows);
+print_r($rows['category_id']);
 
 ?>

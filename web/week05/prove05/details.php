@@ -30,10 +30,9 @@ $stmt = $db->prepare($sql);
 $stmt->execute(array(':category_id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-echo "<h2>More Details: </h2>";
-foreach ($rows as $row) {
-  echo "<b>" . $row['category_name'] . " </b>";
-  echo "<b>" . $row['amount'] . ":</b>";
+echo "<h2>More Details about " . $rows['category_name'] . ":</h2>";
+//foreach ($rows as $row) {
+  echo $rows['category_name'] . " has " . $rows['amount'] . "allowance.";
   echo '<br/>';
 }
 

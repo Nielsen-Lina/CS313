@@ -59,8 +59,9 @@ $id = $stmt->fetch(PDO::FETCH_ASSOC);
 $sql_2 = 'SELECT company_name FROM detail WHERE category_id=:category_id';
 
 $stmt = $db->prepare($sql_2);
-$stmt->bindValue(':category_id', $id, PDO::PARAM_INT);
-$stmt->execute();
+//$stmt->bindValue(':category_id', $id, PDO::PARAM_INT);
+//$stmt->execute();
+$stmt->execute(array(':category_id' => $id));
 $names = $stmt->fetch(PDO::FETCH_ASSOC);
 
 foreach ($names as $name)

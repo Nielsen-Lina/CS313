@@ -31,9 +31,9 @@ $stmt->execute(array(':category_id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($rows as $row) {
-  echo "<h2>More Details about " . $rows['category_name'] . ":</h2>";
+  echo "<h2>More Details about " . $row['category_name'] . ":</h2>";
 
-  echo $rows['category_name'] . " has " . $rows['amount'] . "allowance.";
+  echo $row['category_name'] . " has " . $row['amount'] . "allowance.";
   echo '<br/>';
 }
 

@@ -54,7 +54,7 @@ $stmt = $db->prepare($sql_1);
 $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->execute();
 $id = $stmt->fetch(PDO::FETCH_ASSOC);
-print_r($id['category_id']);
+//print_r($id['category_id']);
 
 $sql_2 = 'SELECT comany_name FROM detail WHERE category_id=:category_id';
 
@@ -66,5 +66,6 @@ $names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($names as $name)
 {
   echo $row['company_name'] . "<br/>";
+}
 
 ?>

@@ -24,7 +24,7 @@ catch (PDOException $ex)
 
 
 $id = htmlspecialchars($_GET['category_id']);
-$sql = 'SELECT category_id, category_name, amount FROM budget WHERE id=:category_id';
+$sql = 'SELECT category_id, category_name, amount FROM budget WHERE category_id=:category_id';
 
 $stmt = $db->prepare($sql);
 $stmt->execute(array(':category_id' => $id));

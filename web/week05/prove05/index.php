@@ -25,7 +25,7 @@ catch (PDOException $ex)
 echo "<h1>Expense Management System</h1>";
 echo "<h2>List of Budget Categories:</h2>";
 
-$sql = 'SELECT category_id, category_name FROM budget';
+$sql = 'SELECT category_id, category_name FROM budget ORDER BY category_name';
 $stmt = $db->query($sql);
 $rows = $stmt;
 
@@ -41,7 +41,7 @@ foreach ($rows as $row)
 
 ?>
 <br/>
-<h3>List of Companies for a chosen Category:</h3>
+<h2>List of Companies for a chosen Category:</h2>
 <form method="GET" action="index.php">
   <input type="text" name="category_name">
   <input type="submit" value="Search">

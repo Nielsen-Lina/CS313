@@ -66,6 +66,7 @@ $statement->execute();
 //$stmt->execute(array(':category_id' => $id));
 $names = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+echo "<h3>List of Companies for chosen Category:</h3>";
 foreach ($names as $name)
 {
   echo $name['company_name'] . "<br/>";

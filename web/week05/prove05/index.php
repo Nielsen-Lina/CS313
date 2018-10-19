@@ -71,7 +71,7 @@ $names = $statement->fetchAll(PDO::FETCH_ASSOC);
 echo "<ul>";
 foreach ($names as $name)
 {
-  echo "<li>" .$name['company_name'] . "</li>";
+  echo "<li>" . $name['company_name'] . "</li>";
 }
 echo "</ul>";
 

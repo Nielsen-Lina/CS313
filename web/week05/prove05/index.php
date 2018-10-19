@@ -48,12 +48,13 @@ foreach ($rows as $row)
 <?php
 
 $category_name = htmlspecialchars($_GET['category_name']);
-
-$stmt = $db->prepare('SELECT category_id FROM budget WHERE lower(category_name)=lower(:category_name)');
+$sql_1 = 'SELECT category_id FROM budget WHERE lower(category_name)=lower(:category_name)';
+$stmt = $db->prepare($sql_1);
 $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->execute();
-//$stmt->execute(array(':book' => $book));
-$rows = $stmt->fetch(PDO::FETCH_ASSOC);
-print_r($rows['category_id']);
+$id = $stmt->fetch(PDO::FETCH_ASSOC);
+print_r($id['category_id']);
+
+
 
 ?>

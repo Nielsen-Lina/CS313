@@ -23,7 +23,7 @@ catch (PDOException $ex)
 } 
 
 echo "<h1>Expense Management System</h1>";
-echo "<h2>List of Budget Categories:</h2>"
+echo "<h2>List of Budget Categories:</h2>";
 /*
 $sql = 'SELECT category_name, amount FROM budget';
 $stmt = $db->query($sql);

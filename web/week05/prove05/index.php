@@ -41,7 +41,7 @@ foreach ($rows as $row)
 
 ?>
 <br/>
-<h3>List of Companies for a chosen Category:</h3>;
+<h3>List of Companies for a chosen Category:</h3>
 <form method="GET" action="index.php">
   <input type="text" name="category_name">
   <input type="submit" value="Search">

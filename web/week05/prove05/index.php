@@ -41,6 +41,7 @@ foreach ($rows as $row)
 
 ?>
 <br/>
+<h3>List of Companies for a chosen Category:</h3>;
 <form method="GET" action="index.php">
   <input type="text" name="category_name">
   <input type="submit" value="Search">
@@ -66,7 +67,6 @@ $statement->execute();
 //$stmt->execute(array(':category_id' => $id));
 $names = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-echo "<h3>List of Companies for chosen Category:</h3>";
 echo "<ul>";
 foreach ($names as $name)
 {

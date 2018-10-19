@@ -61,7 +61,7 @@ $sql_2 = 'SELECT comany_name FROM detail WHERE category_id=:category_id';
 $stmt = $db->prepare($sql_2);
 $stmt->bindValue(':category_id', $id, PDO::PARAM_INT);
 $stmt->execute();
-$names = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$names = $stmt->fetch(PDO::FETCH_ASSOC);
 
 foreach ($names as $name)
 {

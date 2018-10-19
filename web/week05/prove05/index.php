@@ -81,7 +81,7 @@ echo "</ul>";
   <input type="text" name="amount" placeholder="amount">
   <input type="submit" value="Add">
 </form>
-<h3>Add a new budget company name with its accompanied budget category:</h3>
+<h3>Add a new company name with its accompanied budget category:</h3>
 <form method="POST" action="index.php">
   <input type="text" name="company_name" placeholder="company name">
   <input type="text" name="category_name" placeholder="category name">

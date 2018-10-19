@@ -34,6 +34,6 @@ echo "<h2>More Details about " . $rows['category_name'] . ":</h2>";
 //foreach ($rows as $row) {
   echo $rows['category_name'] . " has " . $rows['amount'] . "allowance.";
   echo '<br/>';
-}
+//}
 
 ?>

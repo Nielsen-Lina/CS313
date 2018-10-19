@@ -24,7 +24,7 @@ catch (PDOException $ex)
 
 echo "<h1>Expense Management System</h1>";
 echo "<h2>List of Budget Categories:</h2>"
-
+/*
 $sql = 'SELECT category_name, amount FROM budget';
 $stmt = $db->query($sql);
 $rows = $stmt;
@@ -36,5 +36,13 @@ foreach ($rows as $row)
   echo "<b>" . $row['amount'] . "</b>";
   echo '<br/>';
 }
+*/
 
+foreach ($db->query('SELECT id, book, chapter, verse FROM Scriptures') as $row)
+{
+  echo "<b>" . $row['book'] . " </b>";
+  echo "<b>" . $row['chapter'] . ":</b>";
+  echo "<b>" . $row['verse'] . "</b>";
+  echo '<br/>';
+}
 ?>

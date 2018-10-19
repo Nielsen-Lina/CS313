@@ -62,7 +62,7 @@ $stmt = $db->prepare($sql_2);
 //$stmt->bindValue(':category_id', $id, PDO::PARAM_INT);
 //$stmt->execute();
 $stmt->execute(array(':category_id' => $id));
-$names = $stmt->fetch(PDO::FETCH_ASSOC);
+$names = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($names as $name)
 {

@@ -24,10 +24,10 @@ catch (PDOException $ex)
 
 
 $id = htmlspecialchars($_GET['id']);
-$sql = 'SELECT budget_id, category_name, amount FROM budget WHERE id=:budget_id';
+$sql = 'SELECT category_id, category_name, amount FROM budget WHERE id=:category_id';
 
 $stmt = $db->prepare($sql);
-$stmt->execute(array(':budget_id' => $id));
+$stmt->execute(array(':category_id' => $id));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<h2>Search Results</h2>";

@@ -25,14 +25,14 @@ catch (PDOException $ex)
 echo "<h1>Expense Management System</h1>";
 echo "<h2>List of Budget Categories:</h2>";
 
-$sql = 'SELECT budget_id, category_name FROM budget';
+$sql = 'SELECT category_id, category_name FROM budget';
 $stmt = $db->query($sql);
 $rows = $stmt;
 
 
 foreach ($rows as $row)
 {
-  echo "<a href='details.php?budget_id=" . $row['budget_id'] . "'>More Details >> </a>";
+  echo "<a href='details.php?id=" . $row['id'] . "'>More Details >> </a>";
   echo "<b>" . $row['category_name'] . " </b>";
   //echo "<b>" . $row['amount'] . "</b>";
   echo '<br/>';

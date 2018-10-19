@@ -32,7 +32,7 @@ $rows = $stmt;
 
 foreach ($rows as $row)
 {
-  echo "<a href='details.php?id=" . $row['budget_id'] . "'>More Details >> </a>";
+  echo "<a href='details.php?id=" . $row['id'] . "'>More Details >> </a>";
   echo "<b>" . $row['category_name'] . " </b>";
   //echo "<b>" . $row['amount'] . "</b>";
   echo '<br/>';

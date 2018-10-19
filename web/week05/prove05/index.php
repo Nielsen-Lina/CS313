@@ -39,18 +39,18 @@ foreach ($rows as $row)
 }
 
 ?>
-
+<br>
 <form method="GET" action="index.php">
-  <input type="text" name="category_name"><br>
+  <input type="text" name="category_name">
   <input type="submit" value="Search">
 </form>
 
 <?php
 
-$category = htmlspecialchars($_GET['category_name']);
+$category_name = htmlspecialchars($_GET['category_name']);
 
-$stmt = $db->prepare('SELECT category_id FROM budget WHERE ucfirst(category_name)=ucfirst(:category_name)');
-$stmt->bindValue(':category_name', $category, PDO::PARAM_STR);
+$stmt = $db->prepare('SELECT category_id FROM budget WHERE lower(category_name)=lower(:category_name)');
+$stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->execute();
 //$stmt->execute(array(':book' => $book));
 $rows = $stmt->fetch(PDO::FETCH_ASSOC);

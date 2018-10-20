@@ -41,8 +41,7 @@ echo "<h3>Transactions in this category this month: </h3>";
 $sql_1 = 'SELECT detail_id FROM detail WHERE lower(category_id)=lower(:category_id)';
 
 $stmt = $db->prepare($sql_1);
-$stmt->bindValue(':category_id', $id, PDO::PARAM_INT);
-$stmt->execute();
+$stmt->execute(array(':category_id' => $id));
 $id = $stmt->fetch(PDO::FETCH_ASSOC);
 $id = $id['detail_id'];
 print_r($id);

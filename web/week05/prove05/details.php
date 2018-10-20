@@ -42,8 +42,8 @@ $sql_1 = 'SELECT detail_id FROM detail WHERE lower(category_id)=lower(:category_
 
 $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));
-$id = $stmt->fetch(PDO::FETCH_ASSOC);
-$id = $id['detail_id'];
-print_r($id);
+$det_id = $stmt->fetch(PDO::FETCH_ASSOC);
+$det_id = $det_id['detail_id'];
+print_r($det_id);
 
 ?>

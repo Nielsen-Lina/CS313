@@ -47,7 +47,7 @@ $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($det_id);
 
 echo "<br>";
-$sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM expense JOIN detail ON detail.detail_id=expense.detail_id';
+$sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id';
 $stmt = $db->query($sql_2);
 //$stmt->execute(array(':detail_id' => 15));
 $names = $stmt;

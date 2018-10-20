@@ -56,7 +56,7 @@ print_r($names);
 echo "<ul>";
 foreach ($names as $name)
 {
-  echo "<li>" . $name['company_name'] . "</li>";
+  echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
 }
 echo "</ul>";
 //foreach ($names as $name) {

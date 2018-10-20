@@ -48,10 +48,17 @@ print_r($det_id);
 
 echo "<br>";
 $sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM expense JOIN detail ON detail.detail_id=expense.detail_id';
-$stmt = $db->prepare($sql_2);
-$stmt->execute(array(':detail_id' => 15));
+$stmt = $db->query($sql_2);
+//$stmt->execute(array(':detail_id' => 15));
 $names = $stmt;
 print_r($names);
+
+echo "<ul>";
+foreach ($names as $name)
+{
+  echo "<li>" . $name['company_name'] . "</li>";
+}
+echo "</ul>";
 //foreach ($names as $name) {
 
 

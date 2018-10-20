@@ -38,7 +38,7 @@ foreach ($rows as $row) {
 }
 
 echo "<h3>Transactions in this category this month: </h3>";
-$sql_1 = 'SELECT detail_id FROM detail WHERE lower(category_id)=lower(:category_id)';
+$sql_1 = 'SELECT detail_id FROM detail WHERE category_id=:category_id';
 
 $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));

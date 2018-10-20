@@ -43,13 +43,13 @@ $sql_1 = 'SELECT detail_id FROM detail WHERE category_id=:category_id';
 $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));
 $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//$det_id = $det_id['detail_id'];
+$det_id = $det_id['detail_id'];
 print_r($det_id);
 
 echo "<br>";
 $sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM expense JOIN detail ON detail.detail_id=expense.detail_id';
-$stmt = $db->query($sql_2);
-
+$stmt = $db->prepare($sql_2);
+$stmt->execute(array(':detail_id' => $det_id));
 $names = $stmt;
 print_r($names);
 //foreach ($names as $name) {

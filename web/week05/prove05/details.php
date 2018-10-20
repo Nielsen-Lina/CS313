@@ -57,7 +57,8 @@ echo "<ul>";
 foreach ($names as $name)
 {
   foreach ($det_id as $id)
-  echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
+    if ($name['detail_id'] == $id)
+      echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
 }
 echo "</ul>";
 //foreach ($names as $name) {

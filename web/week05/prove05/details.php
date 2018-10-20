@@ -54,8 +54,9 @@ $names = $stmt;
 print_r($names);
 
 echo "<ul>";
-foreach ($names as $name WHERE $name['detail_id'] = $det_id)
+foreach ($names as $name)
 {
+  foreach ($det_id as $id)
   echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
 }
 echo "</ul>";

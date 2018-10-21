@@ -37,13 +37,17 @@ foreach ($rows as $row) {
   echo '<br/>';
 }
 
-$sql_1 = 'SELECT detail_id FROM detail WHERE category_id=:category_id';
+$sql_1 = 'SELECT company_name, detail_id FROM detail WHERE category_id=:category_id';
 
 $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));
 $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //$det_id = $det_id['detail_id'];
 print_r($det_id);
+ foreach ($det_id as $id) {
+  echo $id['company_name'] . "<br>";
+ }
+
 
 /*
 echo "<br>";

@@ -47,9 +47,10 @@ $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //echo "<br>";
 
 echo "<h3>Transaction list for this category: </h3>";
+echo "<table><tr><th>Company name</th><th>Transaction amount</th></tr>";
 foreach ($det_id as $id) 
 {
-  echo $id['company_name'] . " ";
+  echo "<tr><td>" . $id['company_name'] . "</td>";
 
   $detail_id = $id['detail_id'];
 
@@ -65,11 +66,11 @@ foreach ($det_id as $id)
   $total = 0;
   foreach ($transactions as $transaction)
   {
-    echo $transaction['transaction_amount'];
+    echo "<td>" . $transaction['transaction_amount'] . "</td>";
   }
-  echo "<br>";
-
+  echo "</tr>";
 }
+echo "</table>";
 
 
 /*

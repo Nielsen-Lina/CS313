@@ -27,6 +27,7 @@ $sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purcha
 $stmt = $db->query($sql_2);
 $names = $stmt;
 
+echo "<h2>Transaction List: </h2>";
 echo "<table><tr><th>Company name</th><th>Transaction amount</th><th>Purchase date</th></tr>";
 foreach ($names as $name)
 {

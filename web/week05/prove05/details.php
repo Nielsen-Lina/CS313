@@ -49,8 +49,8 @@ echo "<br>";
 
 foreach ($det_id as $id) 
 {
-  echo $id['detail_id'] . "<br>";
-  $detail_id = $id['company_name'];
+  echo $id['comapny_name'] . "<br>";
+  $detail_id = $id['detail_id'];
 
   $sql_2 = 'SELECT transaction_amount FROM expense WHERE detail_id=:detail_id';
 

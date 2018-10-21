@@ -45,9 +45,22 @@ $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //$det_id = $det_id['detail_id'];
 print_r($det_id);
 echo "<br>";
- foreach ($det_id as $id) {
+
+
+foreach ($det_id as $id) 
+{
   echo $id['company_name'] . "<br>";
- }
+  $detail_id = $id['company_name'];
+
+  $sql_2 = 'SELECT transaction_amount FROM expense WHERE detail_id=:detail_id';
+
+  $stmt = $db->prepare($sql_2);
+  $stmt->execute(array(':detail_id' => $detail_id));
+  $transaction = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  //$det_id = $det_id['detail_id'];
+  print_r($transaction);
+  echo "<br>";
+}
 
 
 /*

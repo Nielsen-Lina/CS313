@@ -43,8 +43,8 @@ $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));
 $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //$det_id = $det_id['detail_id'];
-print_r($det_id);
-echo "<br>";
+//print_r($det_id);
+//echo "<br>";
 
 
 foreach ($det_id as $id) 

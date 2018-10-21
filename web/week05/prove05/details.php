@@ -64,8 +64,9 @@ foreach ($det_id as $id)
   $total = 0;
   foreach ($transactions as $transaction)
   {
-    echo $total += $transaction['transaction_amount'];
+    $total += $transaction['transaction_amount'];
   }
+  echo $total;
 }
 
 

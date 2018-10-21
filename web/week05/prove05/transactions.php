@@ -25,14 +25,12 @@ catch (PDOException $ex)
 
 $sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id';
 $stmt = $db->query($sql_2);
-//$stmt->execute(array(':detail_id' => 15));
 $names = $stmt;
-print_r($names);
 
-echo "<ul>";
+echo "<table><tr><th>Company name</th><th>Transaction amount</th><th>Purchase date</th></tr>";
 foreach ($names as $name)
 {
-	echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
+	echo "<tr><td>" . $name['company_name'] . "</td><td>" . $name['transaction_amount'] . "</td><td>" . $name['purchase_date'] . "</td></tr>";
 }
-echo "</ul>";
+echo "</table>";
 ?>

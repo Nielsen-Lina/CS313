@@ -36,6 +36,8 @@ foreach ($rows as $row)
 }
 
 ?>
+
+<h2><a href='transactions.php'>List of Transactions</a></h2>
 <br/>
 <h2>List of Companies for a chosen Category:</h2>
 <form method="GET" action="index.php">

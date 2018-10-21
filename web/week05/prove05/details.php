@@ -37,6 +37,7 @@ foreach ($rows as $row) {
   echo '<br/>';
 }
 
+/*
 echo "<h3>Transactions in this category this month: </h3>";
 $sql_1 = 'SELECT detail_id FROM detail WHERE category_id=:category_id';
 
@@ -56,14 +57,14 @@ print_r($names);
 echo "<ul>";
 foreach ($names as $name)
 {
-  foreach ($det_id as $id)
-    if ($name['detail_id'] == $id)
+  foreach ($det_id as $id) 
+  {
+    if ($name['detail_id'] == $id) 
+    {
       echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
+    }
+  }
 }
 echo "</ul>";
-//foreach ($names as $name) {
-
-
-//}
-
+*/
 ?>

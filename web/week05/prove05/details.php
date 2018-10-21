@@ -46,7 +46,7 @@ $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($det_id);
 //echo "<br>";
 
-
+echo "<h3>Transaction list for this category: </h3>";
 foreach ($det_id as $id) 
 {
   echo $id['company_name'] . " ";

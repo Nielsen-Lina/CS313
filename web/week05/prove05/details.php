@@ -49,17 +49,23 @@ echo "<br>";
 
 foreach ($det_id as $id) 
 {
-  echo $id['comapny_name'] . "<br>";
+  echo $id['company_name'] . " ";
   $detail_id = $id['detail_id'];
 
   $sql_2 = 'SELECT transaction_amount FROM expense WHERE detail_id=:detail_id';
 
   $stmt = $db->prepare($sql_2);
   $stmt->execute(array(':detail_id' => $detail_id));
-  $transaction = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
   //$det_id = $det_id['detail_id'];
-  print_r($transaction);
+  print_r($transactions);
   echo "<br>";
+
+  $total = 0;
+  foreach ($transactions as $transaction)
+  {
+    echo $total += $transaction['transaction_amount'];
+  }
 }
 
 

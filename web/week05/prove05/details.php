@@ -58,8 +58,8 @@ foreach ($det_id as $id)
   $stmt->execute(array(':detail_id' => $detail_id));
   $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
   //$det_id = $det_id['detail_id'];
-  print_r($transactions);
-  echo "<br>";
+  //print_r($transactions);
+ // echo "<br>";
 
   $total = 0;
   foreach ($transactions as $transaction)

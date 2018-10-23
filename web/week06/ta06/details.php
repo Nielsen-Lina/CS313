@@ -23,16 +23,20 @@ $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
 $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
 /*
-$stmtT = $db->prepare('SELECT name FROM Topic');
+$topic_id;
+$stmtT = $db->prepare('SELECT id, name FROM Topic');
 $stmtT-> execute();
 $existingTopics = $stmtT->fetchAll(PDO::FETCH_ASSOC);
 foreach ($existingTopics as $exTopic) 
 {
-  if ($newTopic != $exTopic['name']) {*/
-    //$stmt = $db->prepare('INSERT INTO Topic(name) VALUES (:name)');
-    //$stmt->execute(array(":name" => $newTopic));
-  /*}
-}*/
+  $topic_id = $exTopic['id'];
+}
+
+$topic_id += 1;
+*/
+$stmt = $db->prepare('INSERT INTO Topic(name) VALUES (:name)');
+$stmt->execute(array(":name" => $newTopic));
+
 
 $topics = !empty($_POST['topics']) ? $_POST['topics'] : [];
 $stmt = $db->prepare('INSERT INTO Scriptures(book, chapter, verse, content) 

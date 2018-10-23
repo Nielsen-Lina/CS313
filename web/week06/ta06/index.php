@@ -38,6 +38,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
  <?php foreach ($rows as $row) : ?>
 	 <?php echo $row['name']; ?>: <input type="checkbox" name="topics[]" value="<?= $row['id']; ?>" />
  <?php endforeach; ?>
+ <textarea name="newTopic"></textarea><input type="checkbox" name="topic">
  <input type="submit">
  </form>
  </body>

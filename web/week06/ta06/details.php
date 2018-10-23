@@ -29,9 +29,8 @@ $existingTopics = $stmtT->fetchAll(PDO::FETCH_ASSOC);
 foreach ($existingTopics as $exTopic) 
 {
   if ($newTopic != $exTopic['name']) {*/
-    $stmt = $db->prepare('INSERT INTO Topic(name) 
-    VALUES (:name)');
-    $stmt->execute(array(":name" => $newTopic));
+    //$stmt = $db->prepare('INSERT INTO Topic(name) VALUES (:name)');
+    //$stmt->execute(array(":name" => $newTopic));
   /*}
 }*/
 

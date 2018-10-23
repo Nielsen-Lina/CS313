@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS Scriptures;
-DROP TABLE IF EXISTS Topic;
 DROP TABLE IF EXISTS Link;
+DROP TABLE IF EXISTS Topic;
+DROP TABLE IF EXISTS Scriptures;
 
 CREATE TABLE Scriptures (
 id serial primary key NOT NULL,

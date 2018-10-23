@@ -16,10 +16,17 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 } 
+
+$newTopic = filter_input(INPUT_POST, 'newTopic', FILTER_SANITIZE_STRING);
 $book = filter_input(INPUT_POST, 'book', FILTER_SANITIZE_STRING);
 $chapter = filter_input(INPUT_POST, 'chapter', FILTER_SANITIZE_STRING);
 $verse = filter_input(INPUT_POST, 'verse', FILTER_SANITIZE_STRING);
 $content = filter_input(INPUT_POST, 'content', FILTER_SANITIZE_STRING);
+
+$stmt = $db->prepare('INSERT INTO Topic(name) 
+VALUES (:name)');
+$stmt->execute(array(":name" => $newTopic));
+
 $topics = !empty($_POST['topics']) ? $_POST['topics'] : [];
 $stmt = $db->prepare('INSERT INTO Scriptures(book, chapter, verse, content) 
 VALUES (:book, :chapter, :verse, :content)');
@@ -52,6 +59,7 @@ foreach ($topics as $topicId) {
   //  $statement = $db->prepare('SELECT book, chapter, verse, content, t.name FROM scripture s'
   //  . ' INNER JOIN scripture_topic st ON s.id = st.scriptureId'
   //  . ' INNER JOIN topic t ON st.topicId = t.id');
+
   // prepare the statement
   $statement = $db->prepare('SELECT id, book, chapter, verse, content FROM Scriptures');
   $statement->execute();

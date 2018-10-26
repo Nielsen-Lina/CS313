@@ -25,13 +25,13 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
-$stmt = $db->prepare('INSERT INTO budget(category_name, amount) VALUES (:category_name, :amount)');
+$stmt = $db->prepare('INSERT INTO budget(category_name, amount) VALUES (:category_name, :amount);');
 $stmt->bindParam(':category_name', $category_name);
 $stmt->bindParam(':amount', $amount);
 //$stmt->binValues(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->binValues(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);;
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 
 //$new_page = "index.php";

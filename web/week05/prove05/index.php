@@ -81,12 +81,16 @@ echo "</ul>";
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount">
   <input type="submit" value="Add">
+  <input type="submit" value="Update">
+  <input type="submit" value="Delete">
 </form>
 <h3>Add a new company name with its accompanied budget category:</h3>
 <form method="POST" action="index.php">
   <input type="text" name="company_name" placeholder="company name">
   <input type="text" name="category_name" placeholder="category name">
   <input type="submit" value="Add">
+  <input type="submit" value="Update">
+  <input type="submit" value="Delete">
 </form>
 <h3>Add a new expense with its accompanied company name, amount and date of purchase:</h3>
 <form method="POST" action="index.php">
@@ -94,5 +98,7 @@ echo "</ul>";
   <input type="text" name="transaction_amount" placeholder="transaction amount">
   <input type="text" name="purchase_date" placeholder="purchase date">
   <input type="submit" value="Add">
+  <input type="submit" value="Update">
+  <input type="submit" value="Delete">
 </form>
 

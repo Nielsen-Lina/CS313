@@ -78,6 +78,12 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $category_chk = [];
 
+$stmtDetail = $db->prepare('SELECT detail_id, company_name, category_id FROM detail');
+$stmtDetail->execute(array());
+$details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$company_chk = [];
+
 ?>
 
 <br/>
@@ -97,10 +103,13 @@ $category_chk = [];
 <h3>Change a new company name with its accompanied budget category:</h3>
 <form method="POST" action="changeCompany.php">
   <input type="text" name="company_name" placeholder="company name">
-  <input type="text" name="category_name" placeholder="category name">
-  <input type="submit" value="Add">
-  <input type="submit" value="Update">
-  <input type="submit" value="Delete">
+  <input type="text" name="category_name" placeholder="category name"><br>
+  <input type="submit" value="Add"><br>
+  <input type="submit" value="Update"><br>
+  <input type="submit" value="Delete"><br>
+  <?php foreach ($details as $detail) : ?>
+    <input type="checkbox" name="company_chk[]" value="<?= $row['company_id']; ?>"/><?php echo $row['company_name']; ?><br>
+  <?php endforeach; ?>
 </form>
 <h3>Change a new expense with its accompanied company name, amount and date of purchase:</h3>
 <form method="POST" action="changeExpense.php">

@@ -34,6 +34,12 @@ $stmt->execute();
 //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows);
 
+$stmt = $db->prepare('SELECT amount FROM budget WHERE category_name=:category_name');
+$stmt->bindParam(':category_name', $category_name);
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r($rows);
+
 //$new_page = "index.php";
 
 //header("Location: $new_page");

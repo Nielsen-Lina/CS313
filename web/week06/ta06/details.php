@@ -35,7 +35,7 @@ foreach ($existingTopics as $exTopic)
 $topic_id += 1;
 */
 $stmt = $db->prepare('INSERT INTO Topic(name) VALUES (:name)');
-$stmt->execute(array(":name" => $newTopic));
+$stmt->execute(array(':name' => $newTopic));
 
 
 $topics = !empty($_POST['topics']) ? $_POST['topics'] : [];

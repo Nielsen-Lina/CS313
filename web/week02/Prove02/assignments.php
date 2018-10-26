@@ -20,6 +20,9 @@
   <dd>- <a href="../../week05/ta05/index.php">Teach05</a></dd>
   <dd>- <a href="../../week05/prove05/index.php">Prove05</a></dd>
   <dt>Week06</dt>
+  <dd>- <a href="../../week06/ta06/index.php">Teach06</a></dd>
+  <dd>- <a href="../../week05/prove05/index.php">Prove06</a></dd>
+  <dt>Week07</dt>
   <dd>- Coming Soon</dd>
 </dl>
 </main>

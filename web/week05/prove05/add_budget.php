@@ -33,7 +33,7 @@ $category_id = $res->fetchColumn();
 $stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) 
 	VALUES (:category_id, :category_name, :amount)');
 $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
-$stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
+$stmt->bindValue(':category_name', lcfirst($category_name), PDO::PARAM_STR);
 $stmt->bindValue(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();
 

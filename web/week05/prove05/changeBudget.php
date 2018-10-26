@@ -29,10 +29,12 @@ $stmt = $db->prepare('INSERT INTO budget(category_name, amount) VALUES (:categor
 $stmt->binValues(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->binValues(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();
+$rows = $stmt;
+print_r($rows);
 
-$new_page = "index.php";
+//$new_page = "index.php";
 
-header("Location: $new_page");
-die();
+//header("Location: $new_page");
+//die();
 
 ?>

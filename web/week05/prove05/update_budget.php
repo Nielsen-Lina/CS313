@@ -53,4 +53,8 @@ foreach ($category_chk as $category)
   
 }
 
+$new_page = "index.php";
+header("Location: $new_page");
+die();
+
 ?>

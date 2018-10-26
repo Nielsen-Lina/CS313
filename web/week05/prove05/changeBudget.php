@@ -26,10 +26,10 @@ $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
 $stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) VALUES (:category_id, :category_name, :amount)');
-$stmt->bindParam(':category_id', 11);
-$stmt->bindParam(':category_name', $category_name);
+$stmt->bindValue(':category_id', 11, PDO::PARAM_INT);
+$stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->execute(array(':category_id' => 10, ':category_name' => $category_name, ':amount' => $amount));
-$stmt->bindParam(':amount', $amount);
+$stmt->bindValue(':amount', $amount, PDO::PARAM_INT);
 //$stmt->binValues(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->binValues(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();

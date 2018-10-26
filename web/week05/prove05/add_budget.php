@@ -28,7 +28,7 @@ $amount = htmlspecialchars($_POST['amount']);
 $res = pg_query('SELECT category_id FROM budget');
 $category_id = pg_num_rows($res);
 
-echo $category_id;
+print_r($category_id);
 
 /*
 $stmt = $db->prepare('SELECT category_id FROM budget');

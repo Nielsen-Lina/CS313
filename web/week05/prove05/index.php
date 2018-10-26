@@ -80,7 +80,7 @@ $category_chk = [];
 
 $stmtDetail = $db->prepare('SELECT detail_id, company_name, category_id FROM detail');
 $stmtDetail->execute(array());
-$details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$details = $stmtDetail->fetchAll(PDO::FETCH_ASSOC);
 print_r($details);
 
 $company_chk = [];

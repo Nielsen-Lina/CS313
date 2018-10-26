@@ -85,7 +85,7 @@ $category_chk = [];
 <h3>Change a new budget category with its accompanied amount:</h3>
 <form method="POST" action="add_budget.php">
   <input type="text" name="category_name" placeholder="category name">
-  <input type="text" name="amount" placeholder="amount">
+  <input type="text" name="amount" placeholder="amount"><br>
   <input type="submit" value="Add"><br>
   <input type="submit" name="update_category" formaction="update_budget.php" value="Update Category"><br>
   <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount"><br>

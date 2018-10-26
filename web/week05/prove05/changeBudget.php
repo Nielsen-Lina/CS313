@@ -25,7 +25,7 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
-echo $company_name;
+echo $category_name;
 echo $amount;
 
 ?>

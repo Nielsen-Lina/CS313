@@ -40,7 +40,7 @@ foreach ($category_chk as $category)
   {
     $stmt = $db->prepare('UPDATE budget SET category_name=:category_name WHERE category_id=:category_id');
     $stmt->bindValue(':category_id', (int)$category);
-    $stmt->bindValue(':category_name', $category_name);
+    $stmt->bindValue(':category_name', ucfirst($category_name);
     $stmt->execute();
   }
   elseif (isset($_POST["update_amount"]))

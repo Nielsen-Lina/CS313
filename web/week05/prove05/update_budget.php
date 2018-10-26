@@ -29,12 +29,13 @@ $category_chk = !empty($_POST['category_chk']) ? $_POST['category_chk'] : [];
 
 foreach ($category_chk as $category)
 {
+  /*
   $stmt = $db->prepare('UPDATE budget SET category_name=:category_name, amount=:amount WHERE category_id=:category_id');
   $stmt->bindValue(':category_id', (int)$category);
   $stmt->bindValue(':category_name', $category_name);
   $stmt->bindValue(':amount', $amount);
   $stmt->execute();
-  /*
+  */
   if (isset($_POST["update_category"]))
   {
     $stmt = $db->prepare('UPDATE budget SET category_name=:category_name WHERE category_id=:category_id');
@@ -49,7 +50,7 @@ foreach ($category_chk as $category)
     $stmt->bindValue(':amount', $amount);
     $stmt->execute();
   }
-  */
+  
 }
 
 ?>

@@ -29,18 +29,13 @@ $category_chk = !empty($_POST['category_chk']) ? $_POST['category_chk'] : [];
 
 foreach ($category_chk as $category)
 {
-  echo $category;
-
   $stmt = $db->prepare('DELETE FROM budget WHERE category_id=:category_id');
   $stmt->bindValue(':category_id', (int)$category);
   $stmt->execute();
-
-  /*
-  $stmtTopics = $db->prepare('UPDATE budget SET category_name=:category_name, amount=:amount WHERE category_name=$category');
-  $stmtTopics->bindValue(':category_name', $category_name);
-  $stmtTopics->bindValue(':amount', $amount);
-  $stmtTopics->execute();
-  */
 }
+
+$new_page = "index.php";
+header("Location: $new_page");
+die();
 
 ?>

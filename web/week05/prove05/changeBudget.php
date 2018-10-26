@@ -39,7 +39,7 @@ foreach ($rows as $row)
 $category_id += 1;
 
 $stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) 
-	VALUES (:category_name, :amount)');
+	VALUES (:category_id, :category_name, :amount)');
 $stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
 $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->execute(array(':category_id' => 10, ':category_name' => $category_name, ':amount' => $amount));

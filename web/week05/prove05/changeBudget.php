@@ -59,7 +59,7 @@ print_r($rows);
 */
 //$new_page = "index.php";
 
-//header("Location: $new_page");
-//die();
+header("Location: $new_page");
+die();
 
 ?>

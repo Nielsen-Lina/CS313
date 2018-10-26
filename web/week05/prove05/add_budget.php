@@ -28,7 +28,7 @@ $amount = htmlspecialchars($_POST['amount']);
 $res = $db->query('SELECT count(*) FROM budget');
 $category_id = $res->fetchColumn();
 
-print_r($category_id);
+echo (int)($category_id += 1);
 
 /*
 $stmt = $db->prepare('SELECT category_id FROM budget');

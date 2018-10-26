@@ -57,7 +57,7 @@ $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 print_r($rows);
 */
-//$new_page = "index.php";
+$new_page = "index.php";
 
 header("Location: $new_page");
 die();

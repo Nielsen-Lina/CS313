@@ -90,6 +90,7 @@ $category_chk = [];
   <?php foreach ($rows as $row) : ?>
     <?php echo $row['category_name']; ?>: <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>" />
   <?php endforeach; ?>
+  <input type="submit" formaction="update_budget.php" value="Update">
   <!--<input type="submit" name="update_category" formaction="update_budget.php" value="Update Category">
   <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount">-->
   <input type="submit" formaction="delete_budget.php" value="Delete">

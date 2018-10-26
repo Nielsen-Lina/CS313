@@ -28,19 +28,7 @@ $amount = htmlspecialchars($_POST['amount']);
 $res = $db->query('SELECT count(*) FROM budget');
 $category_id = $res->fetchColumn();
 
-echo (int)($category_id += 1);
-
-/*
-$stmt = $db->prepare('SELECT category_id FROM budget');
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($rows as $row)
-{
-	$category_id = $row['category_id'];
-}
-
-$category_id += 1;
+(int)($category_id += 1);
 
 $stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) 
 	VALUES (:category_id, :category_name, :amount)');
@@ -52,5 +40,5 @@ $stmt->execute();
 $new_page = "index.php";
 header("Location: $new_page");
 die();
-*/
+
 ?>

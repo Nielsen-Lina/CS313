@@ -30,13 +30,13 @@ $category_id = 0;
 $stmt = $db->prepare('SELECT category_id FROM budget');
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-print_r($rows);
+//print_r($rows);
 
 foreach ($rows as $row)
 {
 	$category_id = $row['category_id'];
 }
-echo $category_id;
+echo $category_id += 1;
 
 /*
 $stmt = $db->prepare('INSERT INTO budget(category_name, amount) 

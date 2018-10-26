@@ -24,7 +24,7 @@ catch (PDOException $ex)
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
-
+/*
 $stmt = $db->prepare('INSERT INTO budget(category_name, amount) VALUES (:category_name, :amount)');
 $stmt->bindParam(':category_name', $category_name);
 $stmt->bindParam(':amount', $amount);
@@ -33,7 +33,7 @@ $stmt->bindParam(':amount', $amount);
 $stmt->execute();
 //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows);
-
+*/
 $stmt = $db->prepare('SELECT amount FROM budget WHERE category_name=:category_name');
 $stmt->bindParam(':category_name', $category_name);
 $stmt->execute();

@@ -72,6 +72,12 @@ foreach ($names as $name)
 }
 echo "</ul>";
 
+$stmt = $db->prepare('SELECT category_id, category_name, amount FROM budget');
+$stmt->execute(array());
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$category_chk = [];
+
 ?>
 
 <br/>
@@ -81,6 +87,9 @@ echo "</ul>";
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount">
   <input type="submit" value="Add">
+  <?php foreach ($rows as $row) : ?>
+    <?php echo $row['category_name']; ?>: <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>" />
+  <?php endforeach; ?>
   <input type="submit" value="Update">
   <input type="submit" value="Delete">
 </form>

@@ -86,7 +86,7 @@ $category_chk = [];
 <form method="POST" action="changeBudget.php">
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount">
-  <input type="submit" value="Add">
+  <input type="submit" value="Add"><br>
   <?php foreach ($rows as $row) : ?>
     <?php echo $row['category_name']; ?>: <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>" />
   <?php endforeach; ?>

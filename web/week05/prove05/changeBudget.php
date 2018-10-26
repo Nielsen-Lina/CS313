@@ -30,18 +30,17 @@ $category_id = 0;
 $stmt = $db->prepare('SELECT category_id FROM budget');
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//print_r($rows);
 
 foreach ($rows as $row)
 {
 	$category_id = $row['category_id'];
 }
-echo $category_id += 1;
 
-/*
-$stmt = $db->prepare('INSERT INTO budget(category_name, amount) 
+$category_id += 1;
+
+$stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) 
 	VALUES (:category_name, :amount)');
-//$stmt->bindValue(':category_id', 11, PDO::PARAM_INT);
+$stmt->bindValue(':category_id', $category_id, PDO::PARAM_INT);
 $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->execute(array(':category_id' => 10, ':category_name' => $category_name, ':amount' => $amount));
 $stmt->bindValue(':amount', $amount, PDO::PARAM_INT);
@@ -50,7 +49,7 @@ $stmt->bindValue(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();
 //$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //print_r($rows);
-*/
+
 /*
 $stmt = $db->prepare('SELECT amount FROM budget WHERE category_name=:category_name');
 $stmt->bindParam(':category_name', $category_name);

@@ -31,8 +31,8 @@ foreach ($category_chk as $category)
 {
   echo $category;
 
-  $stmtTopics = $db->prepare('DELETE FROM budget WHERE category_id=:category');
-  $stmt->bindValue(':category', (int)$category);
+  $stmtTopics = $db->prepare('DELETE FROM budget WHERE category_id=:category_id');
+  $stmt->bindValue(':category_id', (int)$category);
   $stmtTopics->execute();
 
   /*

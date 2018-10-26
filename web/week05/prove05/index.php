@@ -87,12 +87,13 @@ $category_chk = [];
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount">
   <input type="submit" value="Add"><br>
-  <?php foreach ($rows as $row) : ?>
-    <?php echo $row['category_name']; ?>: <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>" />
-  <?php endforeach; ?>
   <input type="submit" name="update_category" formaction="update_budget.php" value="Update Category">
   <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount">
   <input type="submit" formaction="delete_budget.php" value="Delete">
+  <?php foreach ($rows as $row) : ?>
+    <?php echo $row['category_name']; ?>: <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>"/><br>
+  <?php endforeach; ?>
+  
 </form>
 <h3>Change a new company name with its accompanied budget category:</h3>
 <form method="POST" action="changeCompany.php">

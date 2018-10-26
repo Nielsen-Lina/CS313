@@ -108,7 +108,7 @@ $company_chk = [];
   <input type="submit" value="Update"><br>
   <input type="submit" value="Delete"><br>
   <?php foreach ($details as $detail) : ?>
-    <input type="checkbox" name="company_chk[]" value="<?= $row['company_id']; ?>"/><?php echo $row['company_name']; ?><br>
+    <input type="checkbox" name="company_chk[]" value="<?= $row['company_id']; ?>"/><?php echo $detail['company_name']; ?><br>
   <?php endforeach; ?>
 </form>
 <h3>Change a new expense with its accompanied company name, amount and date of purchase:</h3>

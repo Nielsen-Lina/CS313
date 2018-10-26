@@ -22,7 +22,7 @@ catch (PDOException $ex)
   die();
 } 
 
-$company_name = htmlspecialchars($_POST['company_name']);
+$category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
 echo $company_name;

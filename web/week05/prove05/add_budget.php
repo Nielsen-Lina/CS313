@@ -25,8 +25,12 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
-$category_id = 0;
+$res = $db->query('SELECT category_id FROM budget');
+$category_id = pg_num_rows($res);
 
+echo $category_id;
+
+/*
 $stmt = $db->prepare('SELECT category_id FROM budget');
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -48,5 +52,5 @@ $stmt->execute();
 $new_page = "index.php";
 header("Location: $new_page");
 die();
-
+*/
 ?>

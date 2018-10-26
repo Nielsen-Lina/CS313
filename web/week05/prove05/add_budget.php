@@ -25,7 +25,7 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
-$res = $db->query('SELECT category_id FROM budget');
+$res = pg_query('SELECT category_id FROM budget');
 $category_id = pg_num_rows($res);
 
 echo $category_id;

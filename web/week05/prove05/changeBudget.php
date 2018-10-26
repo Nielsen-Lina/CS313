@@ -25,8 +25,9 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
 
-$stmt = $db->prepare('INSERT INTO budget(category_id, category_name, amount) VALUES (:category_id, :category_name, :amount)');
-$stmt->bindValue(':category_id', 11, PDO::PARAM_INT);
+$stmt = $db->prepare('INSERT INTO budget(category_name, amount) 
+	VALUES (:category_name, :amount)');
+//$stmt->bindValue(':category_id', 11, PDO::PARAM_INT);
 $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 //$stmt->execute(array(':category_id' => 10, ':category_name' => $category_name, ':amount' => $amount));
 $stmt->bindValue(':amount', $amount, PDO::PARAM_INT);

@@ -24,12 +24,10 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 } 
-?>
 
-<main>
+echo "<main>";
 
-<?php
-
+echo "<h1>Overview</h1>";
 echo "<h2>List of Budget Categories:</h2>";
 
 $sql = 'SELECT category_id, category_name FROM budget ORDER BY category_name';

@@ -62,7 +62,7 @@ main p {
   margin: 0 0 3rem 0; 
 }
 */
-ul.navbar {
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -71,11 +71,11 @@ ul.navbar {
     width: 100%;
 }
 
-li.navbar {
+.navbarli {
     float: left;
 }
 
-li a.navbar, .dropbtn {
+.navbar li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
@@ -83,7 +83,7 @@ li a.navbar, .dropbtn {
     text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+.navbar li a:hover, .dropdown:hover .dropbtn {
     background-color: #535354;
 }
 

@@ -74,7 +74,7 @@ ul {
 li {
     float: left;
 }
-
+*/
 li a, .dropbtn {
     display: inline-block;
     color: white;
@@ -113,7 +113,7 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+/*
 .mypics {
   width: 190px;
   margin-left: 15px;

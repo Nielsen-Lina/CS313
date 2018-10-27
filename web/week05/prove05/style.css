@@ -72,7 +72,7 @@ ul.navbar {
 }
 
 li.navbar {
-    float: left;
+    float: none;
 }
 
 .navbar li a, .dropbtn {

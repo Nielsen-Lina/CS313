@@ -24,9 +24,6 @@ catch (PDOException $ex)
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
-$category_id = htmlspecialchars($_POST['category_id']);
-
-echo (int)$category_id;
 
 $company_chk = !empty($_POST['company_chk']) ? $_POST['company_chk'] : [];
 
@@ -52,6 +49,7 @@ foreach ($company_chk as $company)
     $stmtId->bindValue(':category_name', $category_name);
     $stmtId->execute();
     $id = $stmtId->fetch(PDO::FETCH_ASSOC);
+    echo $id['category_id'];
 
     $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE company_name=:company_name');
     $stmt->bindValue(':company_name', ucfirst($company_name));

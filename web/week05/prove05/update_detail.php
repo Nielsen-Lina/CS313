@@ -46,14 +46,14 @@ foreach ($company_chk as $company)
   elseif (isset($_POST["update_category"]))
   {
     $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
-    $stmtId->bindValue(':category_name', $category_name);
+    $stmtId->bindValue(':category_name', ucfirst($category_name));
     $stmtId->execute();
     $id = $stmtId->fetch(PDO::FETCH_ASSOC);
     echo $id['category_id'];
 
     $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE company_name=:company_name');
     $stmt->bindValue(':company_name', ucfirst($company_name));
-    $stmt->bindValue(':category_id', $$id['category_id']);
+    $stmt->bindValue(':category_id', $id['category_id']);
     $stmt->execute();
   }
   

@@ -111,6 +111,7 @@ $company_chk = [];
   <input type="submit" name="update_category" formaction="update_detail.php" value="Update Category"><br>
   <input type="submit" formaction="delete_detail.php" value="Delete"><br>
   <?php foreach ($details as $detail) : ?>
+    <input type="hidden" name="category_id" value="<?= $detail['category_id']; ?>">
     <input type="checkbox" name="company_chk[]" value="<?= $detail['detail_id']; ?>"/><?php echo $detail['company_name']; ?><br>
   <?php endforeach; ?>
 </form>

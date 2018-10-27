@@ -1,5 +1,8 @@
 <?php
 
+include('includes/header.php');
+include('includes/navbar.php');
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -22,7 +25,7 @@ catch (PDOException $ex)
   die();
 } 
 
-
+echo "<main>";
 $id = htmlspecialchars($_GET['category_id']);
 $sql = 'SELECT category_id, category_name, amount FROM budget WHERE category_id=:category_id';
 
@@ -72,26 +75,8 @@ foreach ($det_id as $id)
 }
 echo "</table>";
 
+echo "</main>";
 
-/*
-echo "<br>";
-$sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id';
-$stmt = $db->query($sql_2);
-//$stmt->execute(array(':detail_id' => 15));
-$names = $stmt;
-print_r($names);
+include('includes/footer.php');
 
-echo "<ul>";
-foreach ($names as $name)
-{
-  foreach ($det_id as $id) 
-  {
-    if ($name['detail_id'] == $id) 
-    {
-      echo "<li>" . $name['company_name'] . " " . $name['transaction_amount'] . " " . $name['purchase_date'] . "</li>";
-    }
-  }
-}
-echo "</ul>";
-*/
 ?>

@@ -99,7 +99,7 @@ $expense_chk = [];
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount"><br>
   <input type="submit" value="Add"><br>
-  <p>Select a category name in order to do the following:</p><br>
+  <p>Select a category name in order to do the following:</p>
   <input type="submit" name="update_category" formaction="update_budget.php" value="Update Category"><br>
   <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount"><br>
   <input type="submit" formaction="delete_budget.php" value="Delete"><br>
@@ -112,7 +112,7 @@ $expense_chk = [];
   <input type="text" name="company_name" placeholder="company name">
   <input type="text" name="category_name" placeholder="category name"><br>
   <input type="submit" value="Add"><br>
-  <p>Select a company name in order to do the following:</p><br>
+  <p>Select a company name in order to do the following:</p>
   <input type="submit" name="update_company" formaction="update_detail.php" value="Update Company"><br>
   <input type="submit" name="update_category" formaction="update_detail.php" value="Update Category"><br>
   <input type="submit" formaction="delete_detail.php" value="Delete"><br>
@@ -127,14 +127,15 @@ $expense_chk = [];
   <input type="text" name="transaction_amount" placeholder="transaction amount">
   <input type="text" name="purchase_date" placeholder="purchase date"><br>
   <input type="submit" value="Add"><br>
+  <p>Select a transaction in order to do the following:</p>
+  <input type="submit" name="update_company_name" formaction="update_expense.php" value="Update Company Name"><br>
+  <input type="submit" name="update_transaction_amount" formaction="update_expense.php" value="Update Transaction Amount"><br>
+  <input type="submit" name="update_date" formaction="update_expense.php" value="Update Purchase Date"><br>
+  <input type="submit" formaction="delete_expense.php" value="Delete"><br>
   <ul>
   <?php foreach ($expenses as $expense) : ?>
     <input type="checkbox" name="expense_chk[]" value="<?= $expense['expense_id']; ?>"/><?php echo $expense['company_name'] . " " . $expense['transaction_amount'] . " " . $expense['purchase_date'] ?></li><br>
   <?php endforeach; ?>
   </ul>
-  <input type="submit" name="update_company_name" formaction="update_expense.php" value="Update Company Name"><br>
-  <input type="submit" name="update_transaction_amount" formaction="update_expense.php" value="Update Transaction Amount"><br>
-  <input type="submit" name="update_date" formaction="update_expense.php" value="Update Purchase Date"><br>
-  <input type="submit" formaction="delete_expense.php" value="Delete"><br>
 </form>
 

@@ -78,7 +78,7 @@ foreach ($names as $name)
   echo "<li>" . $name['company_name'] . "</li>";
 }
 echo "</ul>";
-
+echo "<br>";
 ?>
 
 </main>

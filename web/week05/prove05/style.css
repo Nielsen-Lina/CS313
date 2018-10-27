@@ -86,6 +86,10 @@ li {
 li a:hover, .dropdown:hover .dropbtn {
     background-color: #535354;
 }
+
+main li {
+  float: initial;
+}
 /*
 li.dropdown {
     display: inline-block;

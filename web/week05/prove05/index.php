@@ -84,7 +84,7 @@ $details = $stmtDetail->fetchAll(PDO::FETCH_ASSOC);
 
 $company_chk = [];
 
-$stmtExpense = $db->prepare('SELECT expense.expense_id, detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id');
+$stmtExpense = $db->prepare('SELECT expense.expense_id, detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id ORDER BY expense.purchase_date ASC');
 $stmtExpense->execute(array());
 $expenses = $stmtExpense->fetchAll(PDO::FETCH_ASSOC);
 

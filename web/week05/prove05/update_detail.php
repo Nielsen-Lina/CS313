@@ -51,8 +51,8 @@ foreach ($company_chk as $company)
     $id = $stmtId->fetch(PDO::FETCH_ASSOC);
     echo $id['category_id'];
 
-    $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE company_name=:company_name');
-    $stmt->bindValue(':company_name', ucfirst($company_name));
+    $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE detail_id=:detail_id');
+    $stmt->bindValue(':detail_id', (int)$company);
     $stmt->bindValue(':category_id', $id['category_id']);
     $stmt->execute();
   }

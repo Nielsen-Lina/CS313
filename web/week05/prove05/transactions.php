@@ -27,7 +27,7 @@ catch (PDOException $ex)
 
 echo "<main>";
 
-$sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id';
+$sql_2 = 'SELECT detail.company_name, expense.transaction_amount, expense.purchase_date FROM detail JOIN expense ON detail.detail_id=expense.detail_id ORDER BY expense.purchase_date ASC';
 $stmt = $db->query($sql_2);
 $names = $stmt;
 

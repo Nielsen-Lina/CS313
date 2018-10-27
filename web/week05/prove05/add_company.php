@@ -25,7 +25,7 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
 
-if (!isset($category_name) || trim($category_name) == '' && !isset($company_name) || trim($company_name) == '')
+if (!isset($category_name) || trim($category_name) == '' || !isset($company_name) || trim($company_name) == '')
 {
   include('error.php');
 }

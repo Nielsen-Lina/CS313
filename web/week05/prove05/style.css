@@ -62,7 +62,7 @@ main p {
   margin: 0 0 3rem 0; 
 }
 */
-.navbar ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -71,7 +71,7 @@ main p {
     width: 100%;
 }
 
-.navbar li {
+li {
     float: left;
 }
 

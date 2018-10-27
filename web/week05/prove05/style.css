@@ -8,12 +8,12 @@ body {
   opacity: 0;
   font: 1.6rem/1.875 'Avenir Next', sans-serif;
 }
-
+*/
 body.loaded {
   opacity: 1;
   transition: 1s opacity;
 }
-*/
+
 /* Default banner */
 .banner {
   position: relative;

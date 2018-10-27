@@ -36,7 +36,6 @@ $sql = 'SELECT category_id, category_name FROM budget ORDER BY category_name';
 $stmt = $db->query($sql);
 $rows = $stmt;
 
-
 foreach ($rows as $row)
 {
   echo "<a href='details.php?category_id=" . $row['category_id'] . "'>" . $row['category_name'] . "</a><br/>";

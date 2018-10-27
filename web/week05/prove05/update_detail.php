@@ -52,12 +52,17 @@ foreach ($company_chk as $company)
     $stmt->bindValue(':detail_id', (int)$company);
     $stmt->bindValue(':category_id', $category_id);
     $stmt->execute();
+
+    $stmt = $db->prepare('UPDATE budget SET category_id=:category_id WHERE detail_id=:detail_id');
+    $stmt->bindValue(':detail_id', (int)$company);
+    $stmt->bindValue(':category_id', $category_id);
+    $stmt->execute();
   }
   
 }
-
+/*
 $new_page = "index.php";
 header("Location: $new_page");
 die();
-
+*/
 ?>

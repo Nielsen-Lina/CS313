@@ -71,16 +71,16 @@ ul.navbar {
     width: 100%;
 }
 
-li.navbar {
-    float: none;
-}
-
 .navbar li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+li.navbar {
+    float: left;
 }
 
 li a:hover, .dropdown:hover .dropbtn {

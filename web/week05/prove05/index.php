@@ -132,9 +132,9 @@ $expense_chk = [];
     <input type="checkbox" name="expense_chk[]" value="<?= $expense['expense_id']; ?>"/><?php echo $expense['company_name'] . " " . $expense['transaction_amount'] . " " . $expense['purchase_date'] ?></li><br>
   <?php endforeach; ?>
   </ul>
-  <input type="submit" name="update_company_name" formaction="update_budget.php" value="Update Company Name"><br>
-  <input type="submit" name="update_transaction_amount" formaction="update_budget.php" value="Update Transaction Amount"><br>
-  <input type="submit" name="update_date" formaction="update_budget.php" value="Update Purchase Date"><br>
-  <input type="submit" formaction="delete_budget.php" value="Delete"><br>
+  <input type="submit" name="update_company_name" formaction="update_expense.php" value="Update Company Name"><br>
+  <input type="submit" name="update_transaction_amount" formaction="update_expense.php" value="Update Transaction Amount"><br>
+  <input type="submit" name="update_date" formaction="update_expense.php" value="Update Purchase Date"><br>
+  <input type="submit" formaction="delete_expense.php" value="Delete"><br>
 </form>
 

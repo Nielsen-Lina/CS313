@@ -26,6 +26,8 @@ $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
 $category_id = htmlspecialchars($_POST['category_id']);
 
+echo (int)$category_id;
+
 $company_chk = !empty($_POST['company_chk']) ? $_POST['company_chk'] : [];
 
 foreach ($company_chk as $company)
@@ -39,16 +41,16 @@ foreach ($company_chk as $company)
   */
   if (isset($_POST["update_company"]))
   {
-    $stmt = $db->prepare('UPDATE detail SET category_name=:category_name WHERE category_id=:category_id');
-    $stmt->bindValue(':category_id', (int)$category);
-    $stmt->bindValue(':category_name', ucfirst($category_name));
+    $stmt = $db->prepare('UPDATE detail SET company_name=:company_name WHERE detail_id=:detail_id');
+    $stmt->bindValue(':detail_id', (int)$company);
+    $stmt->bindValue(':company_name', ucfirst($company_name));
     $stmt->execute();
   }
   elseif (isset($_POST["update_category"]))
   {
-    $stmt = $db->prepare('UPDATE budget SET amount=:amount WHERE category_id=:category_id');
-    $stmt->bindValue(':category_id', (int)$category);
-    $stmt->bindValue(':amount', $amount);
+    $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE detail_id=:detail_id');
+    $stmt->bindValue(':detail_id', (int)$company);
+    $stmt->bindValue(':category_id', $category_id);
     $stmt->execute();
   }
   

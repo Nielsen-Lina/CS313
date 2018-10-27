@@ -24,15 +24,12 @@ catch (PDOException $ex)
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
-$category_id = htmlspecialchars($_POST['category_id']);
-
-echo (int)$category_id;
 
 $res = $db->query('SELECT count(*) FROM detail');
 $detail_id = $res->fetchColumn();
 
 (int)($detail_id += 1);
-/*
+
 $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
 $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
 $stmtId->execute();
@@ -48,5 +45,5 @@ $stmt->execute();
 $new_page = "index.php";
 header("Location: $new_page");
 die();
-*/
+
 ?>

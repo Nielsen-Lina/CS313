@@ -22,9 +22,6 @@ catch (PDOException $ex)
   die();
 } 
 
-$category_name = htmlspecialchars($_POST['category_name']);
-$company_name = htmlspecialchars($_POST['comapny_name']);
-
 $company_chk = !empty($_POST['company_chk']) ? $_POST['company_chk'] : [];
 
 foreach ($company_chk as $company)

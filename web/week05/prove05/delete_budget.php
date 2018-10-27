@@ -22,9 +22,6 @@ catch (PDOException $ex)
   die();
 } 
 
-$category_name = htmlspecialchars($_POST['category_name']);
-$amount = htmlspecialchars($_POST['amount']);
-
 $category_chk = !empty($_POST['category_chk']) ? $_POST['category_chk'] : [];
 
 foreach ($category_chk as $category)

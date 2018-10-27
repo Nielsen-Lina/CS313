@@ -149,11 +149,11 @@ input, select, button {
 }
 
 .container:hover input ~ .checkmark {
-    background-color: #3FEE60;
+    background-color: #7d8aa3;
 }
 
 .container input:checked ~ .checkmark {
-    background-color: #08AE28;
+    background-color: #292f3a;
 }
 
 .checkmark:after {

@@ -62,7 +62,7 @@ main p {
   margin: 0 0 3rem 0; 
 }
 
-.navbar ul {
+ul.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;

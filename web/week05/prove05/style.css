@@ -71,11 +71,11 @@ ul.navbar {
     width: 100%;
 }
 
-li.navbar {
+li {
     float: left;
 }
 
-li a, .dropbtn {
+.navbar li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;

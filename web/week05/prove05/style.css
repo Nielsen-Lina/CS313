@@ -62,7 +62,7 @@ main p {
   margin: 0 0 3rem 0; 
 }
 */
-ul {
+ul.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -71,11 +71,11 @@ ul {
     width: 100%;
 }
 
-li {
+li.navbar {
     float: left;
 }
 
-li a, .dropbtn {
+li a.navbar, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;

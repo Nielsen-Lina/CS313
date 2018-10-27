@@ -71,7 +71,7 @@ main p {
     width: 100%;
 }
 
-.navbarli {
+.navbar li {
     float: left;
 }
 
@@ -83,7 +83,7 @@ main p {
     text-decoration: none;
 }
 
-.navbar li a:hover, .dropdown:hover .dropbtn {
+li a:hover, .dropdown:hover .dropbtn {
     background-color: #535354;
 }
 

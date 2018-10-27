@@ -37,15 +37,16 @@ $stmtId->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
 $stmtId->execute();
 $detail_id = $stmtId->fetch(PDO::FETCH_ASSOC);
 print_r($detail_id['detail_id']);
-/*
+
 $stmt = $db->prepare('INSERT INTO expense(expense_id, detail_id, transaction_amount, purchase_date) 
 	VALUES (:expense_id, :detail_id, :transaction_amount, :purchase_date)');
-$stmt->bindValue(':expense_id', $expense_id, PDO::PARAM_INT)
-$stmt->bindValue(':detail_id', (int)$detail_id['detail_id'], PDO::PARAM_INT);
-$stmt->bindValue(':transaction_amount', $transaction_amount, PDO::PARAM_INT);
+$stmt->bindValue(':expense_id', $expense_id);
+$stmt->bindValue(':detail_id', (int)$detail_id['detail_id']);
+$stmt->bindValue(':transaction_amount', $transaction_amount);
 $stmt->bindValue(':purchase_date', $purchase_date);
 $stmt->execute();
-
+print_r($new = $stmt->fetchAll(PDO::FETCH_ASSOC));
+/*
 $new_page = "index.php";
 header("Location: $new_page");
 die();

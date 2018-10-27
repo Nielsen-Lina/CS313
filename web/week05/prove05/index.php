@@ -39,7 +39,7 @@ foreach ($rows as $row)
 }
 
 ?>
-
+<main>
 <h2><a href='transactions.php'>List of Transactions</a></h2>
 <h2>List of Companies for a chosen Category:</h2>
 <form method="GET" action="index.php">
@@ -141,6 +141,7 @@ $expense_chk = [];
   <?php endforeach; ?>
   </ul>
 </form>
+</main>
 
 <?php 
   include('includes/footer.php');

@@ -57,7 +57,10 @@ $expense_chk = [];
 	  <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount"><br>
 	  <input type="submit" formaction="delete_budget.php" value="Delete"><br>
 	  <?php foreach ($rows as $row) : ?>
-	    <input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>"/><?php echo $row['category_name']; ?><br>
+	  	<label class="container">
+	    	<input type="checkbox" name="category_chk[]" value="<?= $row['category_id']; ?>"/><?php echo $row['category_name']; ?>
+	    	<span class="checkmark"></span>
+		</label>
 	  <?php endforeach; ?>
 	</form>
 	<h3>Change a new company name with its accompanied budget category:</h3>
@@ -70,8 +73,11 @@ $expense_chk = [];
 	  <input type="submit" name="update_category" formaction="update_detail.php" value="Update Category"><br>
 	  <input type="submit" formaction="delete_detail.php" value="Delete"><br>
 	  <?php foreach ($details as $detail) : ?>
-	    <input type="hidden" name="category_id" value="<?= $detail['category_id']; ?>">
-	    <input type="checkbox" name="company_chk[]" value="<?= $detail['detail_id']; ?>"/><?php echo $detail['company_name']; ?><br>
+	  	<label class="container">
+	    	<input type="hidden" name="category_id" value="<?= $detail['category_id']; ?>">
+	    	<input type="checkbox" name="company_chk[]" value="<?= $detail['detail_id']; ?>"/><?php echo $detail['company_name']; ?>
+	    	<span class="checkmark"></span>
+		</label>
 	  <?php endforeach; ?>
 	</form>
 	<h3>Change a new expense with its accompanied company name, amount and date of purchase:</h3>
@@ -85,11 +91,14 @@ $expense_chk = [];
 	  <input type="submit" name="update_transaction_amount" formaction="update_expense.php" value="Update Transaction Amount"><br>
 	  <input type="submit" name="update_date" formaction="update_expense.php" value="Update Purchase Date"><br>
 	  <input type="submit" formaction="delete_expense.php" value="Delete"><br>
-	  <ul>
+	  
 	  <?php foreach ($expenses as $expense) : ?>
-	    <input type="checkbox" name="expense_chk[]" value="<?= $expense['expense_id']; ?>"/><?php echo $expense['company_name'] . " " . $expense['transaction_amount'] . " " . $expense['purchase_date'] ?></li><br>
+	  	<label class="container">
+	    	<input type="checkbox" name="expense_chk[]" value="<?= $expense['expense_id']; ?>"/><?php echo $expense['company_name'] . " " . $expense['transaction_amount'] . " " . $expense['purchase_date'] ?>
+	    	<span class="checkmark"></span>
+		</label>
 	  <?php endforeach; ?>
-	  </ul>
+	  
 	</form>
 </main>
 

@@ -75,7 +75,7 @@ main p {
     float: left;
 }
 
-.navbar li a, .dropbtn {
+li a, .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;

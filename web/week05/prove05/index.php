@@ -93,6 +93,7 @@ $company_chk = [];
   <input type="text" name="category_name" placeholder="category name">
   <input type="text" name="amount" placeholder="amount"><br>
   <input type="submit" value="Add"><br>
+  <p>Select a category name in order to do the following:</p><br>
   <input type="submit" name="update_category" formaction="update_budget.php" value="Update Category"><br>
   <input type="submit" name="update_amount" formaction="update_budget.php" value="Update Amount"><br>
   <input type="submit" formaction="delete_budget.php" value="Delete"><br>
@@ -101,12 +102,14 @@ $company_chk = [];
   <?php endforeach; ?>
 </form>
 <h3>Change a new company name with its accompanied budget category:</h3>
-<form method="POST" action="changeCompany.php">
+<form method="POST" action="add_company.php">
   <input type="text" name="company_name" placeholder="company name">
   <input type="text" name="category_name" placeholder="category name"><br>
   <input type="submit" value="Add"><br>
-  <input type="submit" value="Update"><br>
-  <input type="submit" value="Delete"><br>
+  <p>Select a company name in order to do the following:</p><br>
+  <input type="submit" name="update_company" formaction="update_detail.php" value="Update Comapny"><br>
+  <input type="submit" name="update_category" formaction="update_detail.php" value="Update Category"><br>
+  <input type="submit" formaction="delete_detail.php" value="Delete"><br>
   <?php foreach ($details as $detail) : ?>
     <input type="checkbox" name="company_chk[]" value="<?= $detail['detail_id']; ?>"/><?php echo $detail['company_name']; ?><br>
   <?php endforeach; ?>

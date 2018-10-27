@@ -1,5 +1,8 @@
 <?php
 
+include('includes/header.php');
+include('includes/navbar.php');  
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -138,4 +141,8 @@ $expense_chk = [];
   <?php endforeach; ?>
   </ul>
 </form>
+
+<?php 
+  include('includes/footer.php');
+?>
 

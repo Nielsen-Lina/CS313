@@ -34,7 +34,7 @@ foreach ($category_chk as $category)
   $stmt->execute();
 }
 
-$new_page = "index.php";
+$new_page = "change.php";
 header("Location: $new_page");
 die();
 

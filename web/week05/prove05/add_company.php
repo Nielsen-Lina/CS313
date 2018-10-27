@@ -42,7 +42,7 @@ $stmt->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
 $stmt->bindValue(':category_id', $category_id['category_id'], PDO::PARAM_INT);
 $stmt->execute();
 
-$new_page = "index.php";
+$new_page = "change.php";
 header("Location: $new_page");
 die();
 

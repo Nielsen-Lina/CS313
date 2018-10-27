@@ -37,7 +37,7 @@ $stmt->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
 $stmt->bindValue(':amount', $amount, PDO::PARAM_INT);
 $stmt->execute();
 
-$new_page = "index.php";
+$new_page = "change.php";
 header("Location: $new_page");
 die();
 

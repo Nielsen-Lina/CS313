@@ -46,7 +46,7 @@ $stmt->bindValue(':transaction_amount', $transaction_amount);
 $stmt->bindValue(':purchase_date', $purchase_date);
 $stmt->execute();
 
-$new_page = "index.php";
+$new_page = "change.php";
 header("Location: $new_page");
 die();
 

@@ -27,7 +27,7 @@ $transaction_amount = htmlspecialchars($_POST['transaction_amount']);
 $purchase_date = htmlspecialchars($_POST['purchase_date']);
 
 
-if (!isset($transaction_amount) || trim($transaction_amount) == '' && !isset($company_name) || trim($company_name) == '' && !isset($purchase_date) || trim($purchase_date) == '')
+if (!isset($transaction_amount) || trim($transaction_amount) == '' || !isset($company_name) || trim($company_name) == '' || !isset($purchase_date) || trim($purchase_date) == '')
 {
   include('error.php');
 }

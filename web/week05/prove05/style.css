@@ -71,7 +71,7 @@ ul.navbar {
     width: 100%;
 }
 
-li {
+li.navbar {
     float: left;
 }
 

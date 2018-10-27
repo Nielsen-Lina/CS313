@@ -4,7 +4,7 @@
   <li class="dropdown">
     <a href="javascript:void(0)" class="dropbtn">Changes</a>
     <div class="dropdown-content">
-      <a href="change.php"></a>
+      <a href="change.php">C</a>
     </div>
   </li>
 </ul>

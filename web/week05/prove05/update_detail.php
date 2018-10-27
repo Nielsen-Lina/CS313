@@ -32,13 +32,6 @@ $company_chk = !empty($_POST['company_chk']) ? $_POST['company_chk'] : [];
 
 foreach ($company_chk as $company)
 {
-  /*
-  $stmt = $db->prepare('UPDATE budget SET category_name=:category_name, amount=:amount WHERE category_id=:category_id');
-  $stmt->bindValue(':category_id', (int)$category);
-  $stmt->bindValue(':category_name', $category_name);
-  $stmt->bindValue(':amount', $amount);
-  $stmt->execute();
-  */
   if (isset($_POST["update_company"]))
   {
     $stmt = $db->prepare('UPDATE detail SET company_name=:company_name WHERE detail_id=:detail_id');
@@ -52,7 +45,6 @@ foreach ($company_chk as $company)
     $stmtId->bindValue(':category_name', ucfirst($category_name));
     $stmtId->execute();
     $id = $stmtId->fetch(PDO::FETCH_ASSOC);
-    echo $id['category_id'];
 
     $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE detail_id=:detail_id');
     $stmt->bindValue(':detail_id', (int)$company);
@@ -61,9 +53,9 @@ foreach ($company_chk as $company)
   }
   
 }
-/*
+
 $new_page = "index.php";
 header("Location: $new_page");
 die();
-*/
+
 ?>

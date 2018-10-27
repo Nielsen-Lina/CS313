@@ -25,6 +25,8 @@ catch (PDOException $ex)
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
 
+$new_page = "change.php";
+
 $company_name = ucfirst($company_name);
 $category_name = ucfirst($category_name);
 
@@ -36,7 +38,7 @@ foreach ($company_chk as $company)
   {
     if (!isset($company_name) || trim($company_name) == '')
     {
-      include('error.php');
+      $new_page = "error.php";
     }
     else
     {
@@ -50,7 +52,7 @@ foreach ($company_chk as $company)
   {
     if (!isset($category_name) || trim($category_name) == '')
     {
-      include('error.php');
+      $new_page = "error.php";
     }
     else
     {
@@ -68,7 +70,6 @@ foreach ($company_chk as $company)
   
 }
 
-$new_page = "change.php";
 header("Location: $new_page");
 die();
 

@@ -26,6 +26,8 @@ $company_name = htmlspecialchars($_POST['company_name']);
 $transaction_amount = htmlspecialchars($_POST['transaction_amount']);
 $purchase_date = htmlspecialchars($_POST['purchase_date']);
 
+$new_page = "change.php";
+
 $company_name = ucfirst($company_name);
 
 $expense_chk = !empty($_POST['expense_chk']) ? $_POST['expense_chk'] : [];
@@ -36,7 +38,7 @@ foreach ($expense_chk as $expense)
   {
     if (!isset($company_name) || trim($company_name) == '')
     {
-      include('error.php');
+      $new_page = "error.php";
     }
     else
     {
@@ -55,7 +57,7 @@ foreach ($expense_chk as $expense)
   {
     if (!isset($transaction_amount) || trim($transaction_amount) == '')
     {
-      include('error.php');
+      $new_page = "error.php";
     }
     else
     {
@@ -69,7 +71,7 @@ foreach ($expense_chk as $expense)
   {
     if (!isset($purchase_date) || trim($purchase_date) == '')
     {
-      include('error.php');
+      $new_page = "error.php";
     }
     else
     {
@@ -82,7 +84,6 @@ foreach ($expense_chk as $expense)
   
 }
 
-$new_page = "change.php";
 header("Location: $new_page");
 die();
 

@@ -24,8 +24,12 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 } 
+?>
 
-echo "<h1>Expense Management System</h1>";
+<main>
+
+<?php
+
 echo "<h2>List of Budget Categories:</h2>";
 
 $sql = 'SELECT category_id, category_name FROM budget ORDER BY category_name';
@@ -39,7 +43,7 @@ foreach ($rows as $row)
 }
 
 ?>
-<main>
+
 <h2><a href='transactions.php'>List of Transactions</a></h2>
 <h2>List of Companies for a chosen Category:</h2>
 <form method="GET" action="index.php">

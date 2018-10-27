@@ -1,17 +1,14 @@
-/* Better box-sizing */
+/*
 * { box-sizing: border-box; }
 
-/* 1rem = 10px */
 html { font-size: 62.5%; }
 
-/* Default body */
 body { 
   margin: 0; 
   opacity: 0;
   font: 1.6rem/1.875 'Avenir Next', sans-serif;
 }
 
-/* Loaded body *//*
 body.loaded {
   opacity: 1;
   transition: 1s opacity;

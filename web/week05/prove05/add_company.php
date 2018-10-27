@@ -26,7 +26,7 @@ $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
 $category_id = htmlspecialchars($_POST['category_id']);
 
-print_r($category_id);
+echo (int)$category_id;
 
 $res = $db->query('SELECT count(*) FROM detail');
 $detail_id = $res->fetchColumn();

@@ -1,5 +1,8 @@
 <?php
 
+include('includes/header.php');
+include('includes/navbar.php');
+
 require("dbConnect.php");
 $db = get_db();
 

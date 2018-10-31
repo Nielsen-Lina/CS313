@@ -10,7 +10,7 @@
       <a href="https://github.com/Nielsen-Lina/CS313-PHP/blob/master/web/week04/ta04/team_week4.sql">Week04</a>
       <a href="../../week05/ta05/index.php">Week05</a>
       <a href="../../week06/ta06/index.php">Week06</a>
-      <a href="#">Week07</a>
+      <a href="../../week07/ta07/signup.php">Week07</a>
       <a href="#">Week08</a>
       <a href="#">Week09</a>
       <a href="#">Week10</a>
@@ -28,7 +28,7 @@
       <a href="https://github.com/Nielsen-Lina/CS313-PHP/blob/master/db/myDb.sql">Week04</a>
       <a href="../../week05/prove05/index.php">Week05</a>
       <a href="../../week05/prove05/index.php">Week06</a>
-      <a href="#">Week07</a>
+      <a href="../../week05/prove05/index.php">Week07</a>
       <a href="#">Week08</a>
       <a href="#">Week09</a>
       <a href="#">Week10</a>

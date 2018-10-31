@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS UsersTest;
+
+CREATE TABLE UsersTest(
+    id SERIAL  NOT NULL PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(60) NOT NULL
+);

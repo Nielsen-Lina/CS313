@@ -23,38 +23,15 @@ else if (empty($username) && empty($password))
     $check = true;
     $error = 'Enter provided username and password.';
 }
-else
+else 
 {
     $check = true;
     $error = 'Username and Password do not match! Try again.';
 }
-
-/*
-if (!empty($username) && !empty($password)) {
-    unset($_SESSION['username']);
-    $statement = "SELECT password from UsersTest WHERE username = :username";
-    $preparedStatement = $db->prepare($statement);
-    $preparedStatement->execute([':username' => $username]);
-    $row = $preparedStatement->fetch(PDO::FETCH_ASSOC);
-    $checkPasswordHash = $row['password']; 
-    
-    if (password_verify($password, $checkPasswordHash)) {
-        $_SESSION['username'] = $username;
-        header("Location: welcome.php");
-        die();
-    }
-}
-*/
 ?>
+
 <html>
 <body>
-<style>
-    input { display: inline-block; }
-    .invalid { 
-        color: red;
-        font-size: 14px;
-    }
-</style>
 <main>
     <form action="" method="post">
         <?php if ($check) : ?>

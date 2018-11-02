@@ -31,7 +31,7 @@ else
   $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
   foreach ($category_name_findings as $name)
   {
-    $one = (string)$name['category_name'];
+    $one = (string)($name['category_name']);
     $two = (string)(ucfirst($category_name));
     echo $one;
     echo " " . $two . "<br>";

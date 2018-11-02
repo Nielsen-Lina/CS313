@@ -43,11 +43,13 @@ if (!empty($username) && !empty($password)) {
 <style>
     input { display: inline-block; }
 </style>
+<main>
     <form action="" method="post">
         <input type="text" name="username" id="username" placeholder="Username" />
         <input class="" type="password" name="password" id="password" placeholder="Password" />
         <input type="submit" value="Login">
     </form>
+</main>
 </body>
 
 <?php 

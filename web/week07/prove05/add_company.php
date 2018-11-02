@@ -57,7 +57,7 @@ else
     {
       header("Location: error.php");
       die();
-    }*/
+    }
   }
 
   

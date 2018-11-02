@@ -18,7 +18,7 @@ if ($username == 'new_user' && $password == 'new_pass')
     header("Location: index.php");
     die();
 }
-else if (!isset($username) && !isset($password))
+else if (empty($username) && empty($password))
 {
     $check = true;
     $error = 'Enter provided username and password.';

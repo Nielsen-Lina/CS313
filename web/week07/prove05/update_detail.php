@@ -1,7 +1,17 @@
 <?php
 
-require("dbConnect.php");
-$db = get_db();
+session_start();
+
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
+{
+    require("dbConnect.php");
+    $db = get_db();
+}
+else
+{
+    header("Location: login.php");
+    die();
+}
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);

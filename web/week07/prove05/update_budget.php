@@ -1,7 +1,17 @@
 <?php
 
-require("dbConnect.php");
-$db = get_db(); 
+session_start();
+
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
+{
+    require("dbConnect.php");
+    $db = get_db();
+}
+else
+{
+    header("Location: login.php");
+    die();
+} 
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $amount = htmlspecialchars($_POST['amount']);
@@ -12,13 +22,6 @@ $category_chk = !empty($_POST['category_chk']) ? $_POST['category_chk'] : [];
 
 foreach ($category_chk as $category)
 {
-  /*
-  $stmt = $db->prepare('UPDATE budget SET category_name=:category_name, amount=:amount WHERE category_id=:category_id');
-  $stmt->bindValue(':category_id', (int)$category);
-  $stmt->bindValue(':category_name', $category_name);
-  $stmt->bindValue(':amount', $amount);
-  $stmt->execute();
-  */
   if (isset($_POST["update_category"]))
   {
     if (!isset($category_name) || trim($category_name) == '')

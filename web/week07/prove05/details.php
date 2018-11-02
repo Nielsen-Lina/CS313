@@ -3,8 +3,18 @@
 include('includes/header.php');
 include('includes/navbar.php');
 
-require("dbConnect.php");
-$db = get_db();
+session_start();
+
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
+{
+    require("dbConnect.php");
+    $db = get_db();
+}
+else
+{
+    header("Location: login.php");
+    die();
+}
 
 echo "<main>";
 $id = htmlspecialchars($_GET['category_id']);

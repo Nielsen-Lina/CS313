@@ -5,7 +5,7 @@ include('includes/navbar.php');
 
 session_start();
 
-if ($_SESSION['username'] == 'new_user' && $_SESSION['password'] == 'new_pass')
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
 {
     require("dbConnect.php");
     $db = get_db();

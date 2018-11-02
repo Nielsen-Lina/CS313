@@ -1,7 +1,17 @@
 <?php
 
-require("dbConnect.php");
-$db = get_db();
+session_start();
+
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
+{
+    require("dbConnect.php");
+    $db = get_db();
+}
+else
+{
+    header("Location: login.php");
+    die();
+}
 
 $company_chk = !empty($_POST['company_chk']) ? $_POST['company_chk'] : [];
 

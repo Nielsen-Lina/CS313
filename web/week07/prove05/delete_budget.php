@@ -1,7 +1,17 @@
 <?php
 
-require("dbConnect.php");
-$db = get_db();
+session_start();
+
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
+{
+    require("dbConnect.php");
+    $db = get_db();
+}
+else
+{
+    header("Location: login.php");
+    die();
+}
 
 $category_chk = !empty($_POST['category_chk']) ? $_POST['category_chk'] : [];
 

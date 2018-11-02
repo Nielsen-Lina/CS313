@@ -66,7 +66,7 @@ $expense_chk = [];
 	<form method="POST" action="add_company.php">
 		<div>
 			<label>Company Name</label>
-			<span class="comapny-name" style="color:blue"></span>
+			<span class="company-name" style="color:blue"></span>
 	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')" onblur="hide('company-name')">
 		</div>
 		<div>
@@ -91,7 +91,7 @@ $expense_chk = [];
 	<form method="POST" action="add_expense.php">
 		<div>
 			<label>Company Name</label>
-			<span class="comapny-name" style="color:blue"></span>
+			<span class="company-name" style="color:blue"></span>
 	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')" onblur="hide('company-name')">
 	  	</div>
 	  	<div>

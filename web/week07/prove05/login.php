@@ -6,6 +6,8 @@ include('includes/navbar.php');
 
 $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+$error;
+$check = false;
 
 if ($username == 'new_user' && $password == 'new_pass')
 {
@@ -18,7 +20,8 @@ if ($username == 'new_user' && $password == 'new_pass')
 }
 else
 {
-    echo "<h3>Username and Password do not match! Try again.</h3>";
+    $check = true;
+    $error = 'Username and Password do not match! Try again.';
 }
 
 /*
@@ -42,9 +45,16 @@ if (!empty($username) && !empty($password)) {
 <body>
 <style>
     input { display: inline-block; }
+    .invalid { 
+        color: red;
+        font-size: 14px;
+    }
 </style>
 <main>
     <form action="" method="post">
+        <?php if ($passwordsInvalid) : ?>
+            <p class="invalid"><?php echo $error; ?></p>
+        <?php endif; ?>
         <input type="text" name="username" id="username" placeholder="Username" />
         <input class="" type="password" name="password" id="password" placeholder="Password" />
         <input type="submit" value="Login">

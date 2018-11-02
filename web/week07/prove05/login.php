@@ -23,11 +23,6 @@ else if (empty($username) && empty($password))
     $check = true;
     $error = 'Enter provided username and password.';
 }
-else if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
-{
-    header("Location: index.php");
-    die();
-}
 else 
 {
     $check = true;

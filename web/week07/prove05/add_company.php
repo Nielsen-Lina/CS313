@@ -32,9 +32,9 @@ else
   foreach ($category_name_findings as $name)
   {
     echo $name['category_name'];
-    echo ucfirst($category_name) . "<br>";
+    echo ucfirst($category_name) . "<br>";/*
     if ((string)$name['category_name'] == (string)(ucfirst($category_name)))
-    {/*
+    {
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
         $stmtId->execute();
@@ -50,14 +50,14 @@ else
 
         //$new_page = "change.php";
         //header("Location: $new_page");
-        //die();*/
+        //die();
         echo "here";
     }
     else 
     {
       header("Location: error.php");
       die();
-    }
+    }*/
   }
 
   

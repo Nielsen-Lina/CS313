@@ -41,10 +41,12 @@ $expense_chk = [];
 	<h3>Change a new budget category with its accompanied amount:</h3>
 	<form method="POST" action="add_budget.php">
 		<div>
+			<label>Category Name</label>
 			<span class="category-name" style="color:blue"></span>
 	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')">
 		</div>
 		<div>
+			<label>Amount</label>
 			<span class="amount" style="color:blue"></span>
 	  		<input type="text" name="amount" placeholder="amount" onclick="tip('amount')">
 	  	</div>
@@ -63,10 +65,12 @@ $expense_chk = [];
 	<h3>Change a new company name with its accompanied budget category:</h3>
 	<form method="POST" action="add_company.php">
 		<div>
+			<label>Company Name</label>
 			<span class="comapny-name" style="color:blue"></span>
 	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')">
 		</div>
 		<div>
+			<label>Category Name</label>
 			<span class="category-name" style="color:blue"></span>
 	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')">
 	  	</div>
@@ -86,14 +90,17 @@ $expense_chk = [];
 	<h3>Change a new expense with its accompanied company name, amount and date of purchase:</h3>
 	<form method="POST" action="add_expense.php">
 		<div>
+			<label>Company Name</label>
 			<span class="comapny-name" style="color:blue"></span>
 	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')">
 	  	</div>
 	  	<div>
+	  		<label>Transaction Amount</label>
 	  		<span class="transaction" style="color:blue"></span>
 	  		<input type="text" name="transaction_amount" placeholder="transaction amount" onclick="tip('transaction')">
 	  	</div>
 	  	<div>
+	  		<label>Purchase Date</label>
 	  		<span class="date" style="color:blue"></span>
 	  		<input type="text" name="purchase_date" placeholder="purchase date" onclick="tip('date')">
 	  	</div>

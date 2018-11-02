@@ -31,10 +31,10 @@ else
   $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
   foreach ($category_name_findings as $name)
   {
-    echo $name['category_name'];
-    echo ucfirst($category_name) . "<br>";/*
-    if ((string)$name['category_name'] == (string)(ucfirst($category_name)))
-    {
+    (string)$name['category_name'];
+    (string)ucfirst($category_name);
+    if ($name['category_name'] == ucfirst($category_name))
+    {/*
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
         $stmtId->execute();
@@ -47,7 +47,7 @@ else
         $stmt->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
         $stmt->bindValue(':category_id', $category_id['category_id'], PDO::PARAM_INT);
         $stmt->execute();
-
+*/
         //$new_page = "change.php";
         //header("Location: $new_page");
         //die();
@@ -57,7 +57,7 @@ else
     {
       header("Location: error.php");
       die();
-    }*/
+    }
   }
 
   

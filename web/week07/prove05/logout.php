@@ -9,7 +9,6 @@ include('includes/navbar.php');
 <body>
 <main>
     <h1>You've been signed out.</h1>
-    <a href="login.php">LogIn</a>
 </main>
 </body></html>
 

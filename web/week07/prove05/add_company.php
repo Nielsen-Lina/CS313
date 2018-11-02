@@ -31,9 +31,9 @@ else
   $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
   foreach ($category_name_findings as $name)
   {
-    (string)$name['category_name'];
-    (string)ucfirst($category_name);
-    if ($name['category_name'] != ucfirst($category_name))
+    $one =(string)$name['category_name'];
+    $two = (string)ucfirst($category_name);
+    if ($one != $two)
     {/*
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);

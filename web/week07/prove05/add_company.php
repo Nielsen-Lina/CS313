@@ -31,6 +31,7 @@ else
   $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
   $stmtId->execute();
   $category_id = $stmtId->fetch(PDO::FETCH_ASSOC);
+  print_r($category_id['category_id']);
 
   $stmt = $db->prepare('INSERT INTO detail(detail_id, company_name, category_id) 
   	VALUES (:detail_id, :company_name, :category_id)');
@@ -39,9 +40,9 @@ else
   $stmt->bindValue(':category_id', $category_id['category_id'], PDO::PARAM_INT);
   $stmt->execute();
 
-  $new_page = "change.php";
-  header("Location: $new_page");
-  die();
+  //$new_page = "change.php";
+  //header("Location: $new_page");
+  //die();
 }
 
 ?>

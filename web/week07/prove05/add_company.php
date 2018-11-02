@@ -28,7 +28,7 @@ else
 
   $stmtName = $db->prepare('SELECT category_name FROM budget');
   $stmtName->execute();
-  $category_name_findings = $stmtName->fetch(PDO::FETCH_ASSOC);
+  $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
   foreach ($category_name_findings as $name)
   {
     echo $name;/*

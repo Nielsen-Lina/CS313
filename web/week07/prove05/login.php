@@ -39,8 +39,8 @@ else
 
 <html>
 <body>
-<main>
-    <form action="" method="post">
+<main onload="focusOnForm()">
+    <form name="form" action="" method="post">
         <?php if ($check) : ?>
             <p class="invalid"><?php echo $error; ?></p>
         <?php endif; ?>

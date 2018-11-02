@@ -6,7 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="functions.js"></script>
     </head>
-    <body onload="focusOnForm()">
+    <body>
         <!-- Header -->
         <header class="banner">
           <span class="background"></span>

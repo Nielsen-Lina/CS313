@@ -52,7 +52,7 @@ if (!empty($username) && !empty($password)) {
 </style>
 <main>
     <form action="" method="post">
-        <?php if ($passwordsInvalid) : ?>
+        <?php if ($check) : ?>
             <p class="invalid"><?php echo $error; ?></p>
         <?php endif; ?>
         <input type="text" name="username" id="username" placeholder="Username" />

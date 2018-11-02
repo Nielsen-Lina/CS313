@@ -91,8 +91,8 @@ $expense_chk = [];
 	<form method="POST" action="add_expense.php">
 		<div>
 			<label>Company Name</label>
-			<span class="company-name" style="color:blue"></span>
-	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')" onblur="hide('company-name')">
+			<span class="company-name2" style="color:blue"></span>
+	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name2')" onblur="hide('company-name2')">
 	  	</div>
 	  	<div>
 	  		<label>Transaction Amount</label>

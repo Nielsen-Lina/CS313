@@ -9,6 +9,7 @@ function tip(theClass) {
         document.getElementsByClassName(theClass)[0].innerHTML = "(only numbers, example: 100 or 100.50)";
         break;
     case "company-name":
+    case "company-name2":
         document.getElementsByClassName(theClass)[0].innerHTML = "(example: costco or Costco)";
         break;
     case "date":

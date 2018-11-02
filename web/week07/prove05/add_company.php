@@ -24,25 +24,40 @@ else
 {
   $res = $db->query('SELECT count(*) FROM detail');
   $detail_id = $res->fetchColumn();
-
   (int)($detail_id += 1);
 
-  $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
-  $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
-  $stmtId->execute();
-  $category_id = $stmtId->fetch(PDO::FETCH_ASSOC);
-  print_r($category_id['category_id']);
+  $stmtName = $db->prepare('SELECT category_name FROM budget');
+  $stmtName->execute();
+  $category_name_findings = $stmtId->fetch(PDO::FETCH_ASSOC);
+  foreach ($category_name_findings as $name)
+  {
+    if ($name == ucfirst($category_name))
+    {
+        $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
+        $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);
+        $stmtId->execute();
+        $category_id = $stmtId->fetch(PDO::FETCH_ASSOC);
+        print_r($category_id['category_id']);
 
-  $stmt = $db->prepare('INSERT INTO detail(detail_id, company_name, category_id) 
-  	VALUES (:detail_id, :company_name, :category_id)');
-  $stmt->bindValue(':detail_id', $detail_id, PDO::PARAM_INT);
-  $stmt->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
-  $stmt->bindValue(':category_id', $category_id['category_id'], PDO::PARAM_INT);
-  $stmt->execute();
+        $stmt = $db->prepare('INSERT INTO detail(detail_id, company_name, category_id) 
+          VALUES (:detail_id, :company_name, :category_id)');
+        $stmt->bindValue(':detail_id', $detail_id, PDO::PARAM_INT);
+        $stmt->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
+        $stmt->bindValue(':category_id', $category_id['category_id'], PDO::PARAM_INT);
+        $stmt->execute();
 
-  //$new_page = "change.php";
-  //header("Location: $new_page");
-  //die();
+        $new_page = "change.php";
+        header("Location: $new_page");
+        die();
+    }
+    else 
+    {
+      header("Location: error.php");
+      die();
+    }
+  }
+
+  
 }
 
 ?>

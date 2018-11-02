@@ -57,8 +57,9 @@ else
     }
     else 
     {
-      header("Location: error.php");
-      die();
+      echo "not";
+      //header("Location: error.php");
+      //die();
     }
   }
 

@@ -36,9 +36,6 @@ $sql_1 = 'SELECT company_name, detail_id FROM detail WHERE category_id=:category
 $stmt = $db->prepare($sql_1);
 $stmt->execute(array(':category_id' => $id));
 $det_id = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//$det_id = $det_id['detail_id'];
-//print_r($det_id);
-//echo "<br>";
 
 echo "<h3>Transaction list for this category: </h3>";
 echo "<table><tr><th>Company name</th><th>Transaction amount</th></tr>";
@@ -53,9 +50,6 @@ foreach ($det_id as $id)
   $stmt = $db->prepare($sql_2);
   $stmt->execute(array(':detail_id' => $detail_id));
   $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  //$det_id = $det_id['detail_id'];
-  //print_r($transactions);
- // echo "<br>";
 
   $total = 0;
   foreach ($transactions as $transaction)

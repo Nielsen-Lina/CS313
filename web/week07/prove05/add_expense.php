@@ -28,13 +28,11 @@ else
   $expense_id = $res->fetchColumn();
 
   (int)($expense_id += 1);
-  //print_r($expense_id);
 
   $stmtId = $db->prepare('SELECT detail_id FROM detail WHERE company_name=:company_name');
   $stmtId->bindValue(':company_name', ucfirst($company_name), PDO::PARAM_STR);
   $stmtId->execute();
   $detail_id = $stmtId->fetch(PDO::FETCH_ASSOC);
-  //print_r($detail_id['detail_id']);
 
   $stmt = $db->prepare('INSERT INTO expense(expense_id, detail_id, transaction_amount, purchase_date) 
   	VALUES (:expense_id, :detail_id, :transaction_amount, :purchase_date)');

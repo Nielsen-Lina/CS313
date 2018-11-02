@@ -49,12 +49,8 @@ $stmt->bindValue(':category_name', $category_name, PDO::PARAM_STR);
 $stmt->execute();
 $id = $stmt->fetch(PDO::FETCH_ASSOC);
 $id = $id['category_id'];
-//print_r($id);
 
 $sql_2 = 'SELECT company_name FROM detail WHERE category_id=:category_id';
-//$sql_2 = 'SELECT detail.company_name FROM budget JOIN detail ON budget.category_id=detail.category_id';
-//$stmt = $db->query($sql_2);
-//$names = $stmt;
 $statement = $db->prepare($sql_2);
 $statement->bindParam(':category_id', $id);
 $statement->execute();

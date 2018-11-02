@@ -26,4 +26,6 @@ INSERT INTO detail(company_name, category_id) VALUES ('Bosch', 1), ('Chase Car L
 INSERT INTO expense(detail_id, transaction_amount, purchase_date) VALUES (2, 300,'01 Oct 2018'), (1, -6100, '01 Oct 2018'), (8, 500, '01 Oct 2018'), (7, 500, '01 Oct 2018'), (5, 1500, '03 Oct 2018'), (15, 100, '05 Oct 2018'), (16, 80, '05 Oct 2018');
 
 CREATE USER new_user WITH PASSWORD 'new_pass';
-GRANT SELECT, INSERT, UPDATE, DELETE ON budget AND detail AND expense TO new_user;
+GRANT SELECT, INSERT, UPDATE, DELETE ON budget TO new_user;
+GRANT SELECT, INSERT, UPDATE, DELETE ON detail TO new_user;
+GRANT SELECT, INSERT, UPDATE, DELETE ON expense TO new_user;

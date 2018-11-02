@@ -23,6 +23,11 @@ else if (empty($username) && empty($password))
     $check = true;
     $error = 'Enter provided username and password.';
 }
+else if ($_SESSION['username'] == 'new_user' && $_SESSION['password'] == 'new_pass')
+{
+    header("Location: index.php");
+    die();
+}
 else 
 {
     $check = true;

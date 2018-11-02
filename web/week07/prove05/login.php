@@ -9,7 +9,7 @@ $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 $error = '';
 $check = false;
 
-if ($_SESSION['username'] == 'new_user' && $_SESSION['password'] == 'new_pass')
+if (!empty($_SESSION['username']) && !empty($_SESSION['password']))
 {
     header("Location: index.php");
     die();

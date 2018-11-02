@@ -31,8 +31,8 @@ if (!empty($username) && !empty($password)) {
         header("Location: welcome.php");
         die();
     }
-    */
 }
+*/
 ?>
 <html>
 <body>

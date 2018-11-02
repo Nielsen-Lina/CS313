@@ -30,7 +30,7 @@ else
 
   $stmtName = $db->prepare('SELECT company_name FROM detail');
   $stmtName->execute();
-  $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
+  $company_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
   foreach ($company_name_findings as $name)
   {
     $one = $name['company_name'];

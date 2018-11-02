@@ -35,7 +35,7 @@ else
     $two = (string)ucfirst($category_name);
     echo $one;
     echo " " . $two . "<br>";
-    if ($one = $two)
+    if ($one != $two)
     {/*
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);

@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+include('includes/header.php');
+include('includes/navbar.php'); 
+
 $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
@@ -45,3 +49,7 @@ if (!empty($username) && !empty($password)) {
         <input type="submit" value="Login">
     </form>
 </body>
+
+<?php 
+  include('includes/footer.php');
+?>

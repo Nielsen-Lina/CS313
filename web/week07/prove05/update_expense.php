@@ -16,6 +16,7 @@ else
 $company_name = htmlspecialchars($_POST['company_name']);
 $transaction_amount = htmlspecialchars($_POST['transaction_amount']);
 $purchase_date = htmlspecialchars($_POST['purchase_date']);
+$match = false;
 
 $new_page = "change.php";
 

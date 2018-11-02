@@ -28,10 +28,10 @@ else
 
   $stmtName = $db->prepare('SELECT category_name FROM budget');
   $stmtName->execute();
-  $category_name_findings = $stmtId->fetch(PDO::FETCH_ASSOC);
+  $category_name_findings = $stmtName->fetch(PDO::FETCH_ASSOC);
   foreach ($category_name_findings as $name)
   {
-    if ($name == ucfirst($category_name))
+    if ($name['category_name'] == ucfirst($category_name))
     {
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);

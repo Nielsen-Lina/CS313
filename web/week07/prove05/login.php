@@ -6,7 +6,7 @@ include('includes/navbar.php');
 
 $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-$error;
+$error = 'Enter provided username and password.';
 $check = false;
 
 if ($username == 'new_user' && $password == 'new_pass')

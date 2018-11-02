@@ -25,7 +25,7 @@ else if (!isset($username) && !isset($password))
 }
 else
 {
-    $check = true;
+    //$check = true;
     $error = 'Username and Password do not match! Try again.';
 }
 

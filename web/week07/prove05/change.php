@@ -43,12 +43,12 @@ $expense_chk = [];
 		<div>
 			<label>Category Name</label>
 			<span class="category-name" style="color:blue"></span>
-	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')">
+	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')" onblur="hide('category-name')">
 		</div>
 		<div>
 			<label>Amount</label>
 			<span class="amount" style="color:blue"></span>
-	  		<input type="text" name="amount" placeholder="amount" onclick="tip('amount')">
+	  		<input type="text" name="amount" placeholder="amount" onclick="tip('amount')" onblur="hide('amount')">
 	  	</div>
 	  	<input type="submit" value="Add"><br>
 	  	<p>Select a category name in order to do the following:</p>
@@ -67,12 +67,12 @@ $expense_chk = [];
 		<div>
 			<label>Company Name</label>
 			<span class="comapny-name" style="color:blue"></span>
-	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')">
+	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')" onblur="hide('company-name')">
 		</div>
 		<div>
 			<label>Category Name</label>
 			<span class="category-name" style="color:blue"></span>
-	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')">
+	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')" onblur="hide('category-name')">
 	  	</div>
 	  	<input type="submit" value="Add"><br>
 	  	<p>Select a company name in order to do the following:</p>
@@ -92,17 +92,17 @@ $expense_chk = [];
 		<div>
 			<label>Company Name</label>
 			<span class="comapny-name" style="color:blue"></span>
-	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')">
+	  		<input type="text" name="company_name" placeholder="company name" onclick="tip('company-name')" onblur="hide('company-name')">
 	  	</div>
 	  	<div>
 	  		<label>Transaction Amount</label>
 	  		<span class="transaction" style="color:blue"></span>
-	  		<input type="text" name="transaction_amount" placeholder="transaction amount" onclick="tip('transaction')">
+	  		<input type="text" name="transaction_amount" placeholder="transaction amount" onclick="tip('transaction')" onblur="hide('transaction')">
 	  	</div>
 	  	<div>
 	  		<label>Purchase Date</label>
 	  		<span class="date" style="color:blue"></span>
-	  		<input type="text" name="purchase_date" placeholder="purchase date" onclick="tip('date')">
+	  		<input type="text" name="purchase_date" placeholder="purchase date" onclick="tip('date')" onblur="hide('date')">
 	  	</div>
 	  	<input type="submit" value="Add"><br>
 	  	<p>Select a transaction in order to do the following:</p>

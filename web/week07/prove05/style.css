@@ -45,11 +45,11 @@ body.loaded {
 
 /* Other stuff */
 .banner h1 {
-  color: #212326;
+  color: #333;
   margin: 0;
   line-height: 40rem;
   text-transform: uppercase;
-  text-shadow: 0 0 .3rem black;
+  text-shadow: 0 0 .3rem white;
   font-size: 40px;
 }
 

@@ -33,15 +33,36 @@ foreach ($expense_chk as $expense)
     }
     else
     {
-      $stmtId = $db->prepare('SELECT detail_id FROM detail WHERE company_name=:company_name');
-      $stmtId->bindValue(':company_name', ucfirst($company_name));
-      $stmtId->execute();
-      $id = $stmtId->fetch(PDO::FETCH_ASSOC);
+      $stmtName = $db->prepare('SELECT company_name FROM detail');
+      $stmtName->execute();
+      $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($company_name_findings as $name)
+      {
+        $one = $name['company_name'];
+        $two = ucfirst($company_name);
+        if (strcasecmp($one, $two) == 0)
+        {
+            $match = true;
+        }
+      }
 
-      $stmt = $db->prepare('UPDATE expense SET detail_id=:detail_id WHERE expense_id=:expense_id');
-      $stmt->bindValue(':expense_id', (int)$expense);
-      $stmt->bindValue(':detail_id', $id['detail_id']);
-      $stmt->execute();
+      if ($match)
+      {
+        $stmtId = $db->prepare('SELECT detail_id FROM detail WHERE company_name=:company_name');
+        $stmtId->bindValue(':company_name', ucfirst($company_name));
+        $stmtId->execute();
+        $id = $stmtId->fetch(PDO::FETCH_ASSOC);
+
+        $stmt = $db->prepare('UPDATE expense SET detail_id=:detail_id WHERE expense_id=:expense_id');
+        $stmt->bindValue(':expense_id', (int)$expense);
+        $stmt->bindValue(':detail_id', $id['detail_id']);
+        $stmt->execute();
+      }
+      else
+      {
+        header("Location: error.php");
+        die();
+      }
     }
   }
   elseif (isset($_POST["update_transaction_amount"]))

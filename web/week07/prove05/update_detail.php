@@ -15,6 +15,7 @@ else
 
 $category_name = htmlspecialchars($_POST['category_name']);
 $company_name = htmlspecialchars($_POST['company_name']);
+$match = false;
 
 $new_page = "change.php";
 
@@ -47,18 +48,38 @@ foreach ($company_chk as $company)
     }
     else
     {
-      $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
-      $stmtId->bindValue(':category_name', ucfirst($category_name));
-      $stmtId->execute();
-      $id = $stmtId->fetch(PDO::FETCH_ASSOC);
+      $stmtName = $db->prepare('SELECT category_name FROM budget');
+      $stmtName->execute();
+      $category_name_findings = $stmtName->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($category_name_findings as $name)
+      {
+        $one = $name['category_name'];
+        $two = ucfirst($category_name);
+        if (strcmp($one, $two) == 0)
+        {
+            $match = true;
+        }
+      }
 
-      $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE detail_id=:detail_id');
-      $stmt->bindValue(':detail_id', (int)$company);
-      $stmt->bindValue(':category_id', $id['category_id']);
-      $stmt->execute();
+      if ($match)
+      {
+        $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
+        $stmtId->bindValue(':category_name', ucfirst($category_name));
+        $stmtId->execute();
+        $id = $stmtId->fetch(PDO::FETCH_ASSOC);
+
+        $stmt = $db->prepare('UPDATE detail SET category_id=:category_id WHERE detail_id=:detail_id');
+        $stmt->bindValue(':detail_id', (int)$company);
+        $stmt->bindValue(':category_id', $id['category_id']);
+        $stmt->execute();
+      }
+      else
+      {
+        header("Location: error.php");
+        die();
+      }
     }
   }
-  
 }
 
 header("Location: $new_page");

@@ -35,7 +35,7 @@ else
     $two = ucfirst($category_name);
     echo $one;
     echo " " . $two . "<br>";
-    if (strcmp($one, $two) == "0")
+    if (strcmp($one, $two) == 0)
     {/*
         $stmtId = $db->prepare('SELECT category_id FROM budget WHERE category_name=:category_name');
         $stmtId->bindValue(':category_name', ucfirst($category_name), PDO::PARAM_STR);

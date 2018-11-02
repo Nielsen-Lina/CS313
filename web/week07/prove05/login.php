@@ -4,7 +4,7 @@ session_start();
 include('includes/header.php');
 include('includes/navbar.php'); 
 
-$username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+$username = filter_var($_POST['category_name'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 $error = '';
 $check = false;
@@ -37,19 +37,17 @@ else
 
 ?>
 
-<html>
-<body>
-<main onload="focusOnForm()">
+<main>
     <form name="form" action="" method="post">
         <?php if ($check) : ?>
             <p class="invalid"><?php echo $error; ?></p>
         <?php endif; ?>
-        <input type="text" name="username" id="username" placeholder="Username" />
+        <input type="text" name="category_name" id="username" placeholder="Username" />
         <input class="" type="password" name="password" id="password" placeholder="Password" />
         <input type="submit" value="Login">
     </form>
 </main>
-</body>
+
 
 <?php 
   include('includes/footer.php');

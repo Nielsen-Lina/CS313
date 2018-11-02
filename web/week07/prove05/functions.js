@@ -23,5 +23,5 @@ function hide(theClass) {
 }
 
 function focusOnForm() {
-    document.form.first.focus();
+    document.form.category_name.focus();
 }

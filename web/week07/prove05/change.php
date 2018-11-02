@@ -36,7 +36,7 @@ $expense_chk = [];
 
 ?>
 
-<main onload="focusOnForm()">
+<main>
 	<h2>Changes to the Expense Management System</h2>
 	<h3>Change a new budget category with its accompanied amount:</h3>
 	<form name="form" method="POST" action="add_budget.php">

@@ -6,7 +6,7 @@ include('includes/navbar.php');
 
 $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
-$error = 'Enter provided username and password.';
+$error = '';
 $check = false;
 
 if ($username == 'new_user' && $password == 'new_pass')
@@ -17,6 +17,11 @@ if ($username == 'new_user' && $password == 'new_pass')
     $_SESSION['password'] = 'new_pass';
     header("Location: index.php");
     die();
+}
+else if (!isset($username) && !isset($password))
+{
+    $check = true;
+    $error = 'Enter provided username and password.';
 }
 else
 {

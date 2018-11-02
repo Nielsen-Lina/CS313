@@ -1,6 +1,7 @@
 function tip(theClass) {
     switch (theClass) {
     case "category-name": 
+    case "category-name2":
         document.getElementsByClassName(theClass)[0].innerHTML = "(example: income or Income)";
         break;
     case "amount":

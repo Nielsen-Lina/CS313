@@ -71,8 +71,8 @@ $expense_chk = [];
 		</div>
 		<div>
 			<label>Category Name</label>
-			<span class="category-name" style="color:blue"></span>
-	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name')" onblur="hide('category-name')">
+			<span class="category-name2" style="color:blue"></span>
+	  		<input type="text" name="category_name" placeholder="category name" onclick="tip('category-name2')" onblur="hide('category-name2')">
 	  	</div>
 	  	<input type="submit" value="Add"><br>
 	  	<p>Select a company name in order to do the following:</p>

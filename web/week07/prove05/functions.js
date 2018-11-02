@@ -19,3 +19,7 @@ function tip(theClass) {
 function hide(theClass) {
     document.getElementsByClassName(theClass)[0].innerHTML = " ";
 }
+
+function focusOnForm() {
+    document.form.first.focus();
+}

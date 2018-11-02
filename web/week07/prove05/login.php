@@ -25,7 +25,7 @@ else if (empty($username) && empty($password))
 }
 else
 {
-    //$check = true;
+    $check = true;
     $error = 'Username and Password do not match! Try again.';
 }
 

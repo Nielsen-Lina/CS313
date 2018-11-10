@@ -26,6 +26,9 @@
   <dd>- <a href="../../week07/ta07/signup.php">Teach07</a></dd>
   <dd>- <a href="../../week07/prove05/index.php">Prove07</a></dd>
   <dt>Week08</dt>
+  <dd>- <a href="https://github.com/Nielsen-Lina/CS313-PHP/tree/master/node/week08">Teach08</a></dd>
+  <dd>- <a href="https://github.com/Nielsen-Lina/CS313-PHP/tree/master/node/week08/prove08">Prove08</a></dd>
+  <dt>Week09</dt>
   <dd>- Coming Soon</dd>
 </dl>
 </main>
